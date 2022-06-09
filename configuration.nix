@@ -154,4 +154,7 @@
   ## NOTES
   # gsettings set org.gnome.desktop.privacy remember-recent-files false
 
+  # To connect to online accounts
+  # WEBKIT_FORCE_SANDBOX=0 gnome-control-center online-accounts
+
 }
