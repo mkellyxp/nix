@@ -45,6 +45,10 @@
   services.xserver.desktopManager.gnome.enable = true;
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
   
+  # Enable the Plasma 5 Desktop Environment.
+  ## services.xserver.displayManager.sddm.enable = true;
+  ## services.xserver.desktopManager.plasma5.enable = true;
+  
   # Enable the Cinnamon Desktop Environment.
   ## services.xserver.displayManager.lightdm.enable = true;
   ## services.xserver.desktopManager.cinnamon.enable = true;
