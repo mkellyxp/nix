@@ -96,6 +96,7 @@
     gthumb
     tdesktop
     brave
+    libreoffice
     gitkraken
     filezilla
     vscode
