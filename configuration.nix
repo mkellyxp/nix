@@ -43,8 +43,11 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  
+  # Enable the Cinnamon Desktop Environment.
+  ## services.xserver.displayManager.lightdm.enable = true;
+  ## services.xserver.desktopManager.cinnamon.enable = true;
 
 
   # Configure keymap in X11
@@ -89,8 +92,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # For Gnome
     gnomeExtensions.appindicator
     gnomeExtensions.hide-universal-access
+    gnome.gnome-tweaks
+    
+    # For Cinnamon
+    ## gnome.gnome-screenshot
+    
+    arc-theme
+    papirus-icon-theme
     firefox
     neovim
     gthumb
@@ -102,8 +113,6 @@
     vscode
     dbeaver
     slack
-    papirus-icon-theme
-    gnome.gnome-tweaks
     nodejs
     docker
     docker-compose
