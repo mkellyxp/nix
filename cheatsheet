@@ -1,0 +1,7 @@
+sudo nixos-rebuild switch —upgrade
+
+sudo nix-collect-garbage -d
+
+sudo nix-channel —update
+
+and you have sudo nixos-rebuild test if you want to test your config first
