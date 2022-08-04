@@ -101,6 +101,7 @@
     gnomeExtensions.hide-universal-access
     gnomeExtensions.sound-output-device-chooser
     gnome.gnome-tweaks
+    gnome.geary
     
     # For Cinnamon
     ## gnome.gnome-screenshot
