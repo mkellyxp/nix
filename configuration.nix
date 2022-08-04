@@ -108,6 +108,7 @@
     papirus-icon-theme
     firefox
     neovim
+    wmctrl
     gthumb
     tdesktop
     brave
