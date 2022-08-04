@@ -99,6 +99,7 @@
     # For Gnome
     gnomeExtensions.appindicator
     gnomeExtensions.hide-universal-access
+    gnomeExtensions.sound-output-device-chooser
     gnome.gnome-tweaks
     
     # For Cinnamon
