@@ -100,6 +100,7 @@
     gnomeExtensions.appindicator
     gnomeExtensions.hide-universal-access
     gnomeExtensions.sound-output-device-chooser
+    gnomeExtensions.soft-brightness
     gnome.gnome-tweaks
     gnome.geary
     
