@@ -100,13 +100,15 @@
     gnomeExtensions.appindicator
     gnomeExtensions.hide-universal-access
     gnomeExtensions.sound-output-device-chooser
-    gnomeExtensions.soft-brightness
+    # gnomeExtensions.soft-brightness  // incompatible version sadly
+    gnomeExtensions.brightness-control-using-ddcutil
     gnome.gnome-tweaks
     gnome.geary
     
     # For Cinnamon
     ## gnome.gnome-screenshot
     
+    ddcutil
     arc-theme
     papirus-icon-theme
     firefox
