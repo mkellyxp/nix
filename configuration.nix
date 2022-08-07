@@ -16,6 +16,10 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   
   boot.kernelModules = ["i2c-dev"];
+  services.udev.extraRules = ''
+        KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
+  '';
+
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -89,7 +93,7 @@
   users.users.mkelly = {
     isNormalUser = true;
     description = "Mike Kelly";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "i2c"];
   };
 
   # Allow unfree packages
