@@ -138,6 +138,8 @@
     htop
     handbrake
     spotify
+    libarchive
+    wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
