@@ -10,16 +10,13 @@
       ./hardware-configuration.nix
     ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  
-  boot.kernelModules = ["i2c-dev"];
-  services.udev.extraRules = ''
-        KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
-  '';
-
+  boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -49,7 +46,8 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  ##services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+
   
   # Enable the Plasma 5 Desktop Environment.
   ## services.xserver.displayManager.sddm.enable = true;
@@ -58,7 +56,7 @@
   # Enable the Cinnamon Desktop Environment.
   ## services.xserver.displayManager.lightdm.enable = true;
   ## services.xserver.desktopManager.cinnamon.enable = true;
-
+  ## xdg.portal.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -67,7 +65,7 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -93,7 +91,7 @@
   users.users.mkelly = {
     isNormalUser = true;
     description = "Mike Kelly";
-    extraGroups = [ "networkmanager" "wheel" "docker" "i2c"];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   # Allow unfree packages
@@ -104,43 +102,43 @@
   environment.systemPackages = with pkgs; [
     # For Gnome
     gnomeExtensions.appindicator
-    gnomeExtensions.hide-universal-access
-    gnomeExtensions.sound-output-device-chooser
-    # gnomeExtensions.soft-brightness  // incompatible version sadly
-    gnomeExtensions.brightness-control-using-ddcutil
+    gnomeExtensions.just-perfection
     gnome.gnome-tweaks
-    gnome.geary
     
     # For Cinnamon
     ## gnome.gnome-screenshot
+
+    # For Sway
+    ## light
+    ## foot
+    ## dmenu
+    ## grim
+    ## slurp
+    ## xfce.thunar
+    ## gnome-icon-theme
+    ## brightnessctl
+    ## gnome.gnome-tweaks
+
     
-    ddcutil
-    arc-theme
+    # General Packages
     papirus-icon-theme
+    arc-theme
     firefox
     neovim
-    wmctrl
     gthumb
-    tdesktop
-    brave
-    libreoffice
-    gitkraken
-    filezilla
-    vscode
-    dbeaver
-    slack
+    vscodium
     nodejs
     docker
     docker-compose
-    mysql57
-    php74
+    php
+    php81Packages.composer
     git
     htop
-    handbrake
-    spotify
     libarchive
-    wget
+    appimage-run
+    wapiti
   ];
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -153,14 +151,18 @@
   # List services that you want to enable:
 
   virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  services.flatpak.enable = true;
+  services.fwupd.enable = true;
+
+  users.extraGroups.vboxusers.members = [ "mkelly" ];
+
 
   ## MYSQL STUFF
   ## services.mysql = {
   ##   enable = true;
   ##   package = pkgs.mysql;
   ## };
-
-
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
