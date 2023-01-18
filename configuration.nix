@@ -46,15 +46,7 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-<<<<<<< HEAD
   ##services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
-=======
-  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome.geary
-    gnome.gnome-boxes
-  ]);
->>>>>>> main
 
   
   # Enable the Plasma 5 Desktop Environment.
@@ -111,10 +103,6 @@
     # For Gnome
     gnomeExtensions.appindicator
     gnomeExtensions.just-perfection
-<<<<<<< HEAD
-=======
-    gnomeExtensions.sound-output-device-chooser
->>>>>>> main
     gnome.gnome-tweaks
     
     # For Cinnamon
@@ -147,14 +135,8 @@
     git
     htop
     libarchive
-<<<<<<< HEAD
     appimage-run
     wapiti
-=======
-    wget
-    wmctrl
-    android-tools
->>>>>>> main
   ];
 
 
@@ -169,16 +151,11 @@
   # List services that you want to enable:
 
   virtualisation.docker.enable = true;
-<<<<<<< HEAD
   virtualisation.virtualbox.host.enable = true;
   services.flatpak.enable = true;
   services.fwupd.enable = true;
 
   users.extraGroups.vboxusers.members = [ "mkelly" ];
-=======
-  services.flatpak.enable = true;
-
->>>>>>> main
 
 
   ## MYSQL STUFF
