@@ -250,8 +250,10 @@ bindsym XF86AudioMute exec 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
 ### Brightness Controls ###
 bindsym XF86MonBrightnessUp exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
+## wpctl get-volume @DEFAULT_AUDIO_SINK@
 
 bindsym $mod+p exec 'grim -g "$(slurp)" ~/Screenshots/$(date +%Hh_%Mm_%Ss_%d_%B_%Y).png'
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
 
 include /etc/sway/config.d/*
