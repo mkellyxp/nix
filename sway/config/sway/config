@@ -69,6 +69,8 @@ bindsym $mod+escape exec 'systemctl suspend'
     bindsym $mod+d exec $menu
 
     bindsym $mod+Space exec fuzzel
+    bindsym Alt+Space exec fuzzel
+
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -109,6 +111,8 @@ bindsym $mod+escape exec 'systemctl suspend'
 #
 # Workspaces:
 #
+    bindsym Alt+Tab workspace back_and_forth
+
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -237,17 +241,20 @@ smart_borders on
 smart_gaps on
 gaps inner 10
 
-bindsym XF86AudioRaiseVolume exec 'wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'
-bindsym XF86AudioLowerVolume exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-'
-bindsym XF86AudioMute exec 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
+bindsym XF86AudioRaiseVolume exec 'wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; notify-send -h string:x-canonical-private-synchronous:my-notification --expire-time=1000 $(wpctl get-volume @DEFAULT_AUDIO_SINK@)'
+bindsym XF86AudioLowerVolume exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; notify-send --expire-time=1000 -h string:x-canonical-private-synchronous:my-notification $(wpctl get-volume @DEFAULT_AUDIO_SINK@)'
+bindsym XF86AudioMute exec 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; notify-send --expire-time=1000 -h string:x-canonical-private-synchronous:my-notification $(wpctl get-volume @DEFAULT_AUDIO_SINK@)'
 
 ### Brightness Controls ###
-bindsym XF86MonBrightnessUp exec light -A 10
-bindsym XF86MonBrightnessDown exec light -U 10
+bindsym XF86MonBrightnessUp exec 'light -A 10; notify-send -h string:x-canonical-private-synchronous:my-notification --expire-time=1000 "Brightness " $(light)'
+bindsym XF86MonBrightnessDown exec 'BRIGHTNESS=$(light -G); NEW_BRIGHTNESS=$(echo "$BRIGHTNESS - 10" | bc); if (( $(echo "$NEW_BRIGHTNESS <= 0" | bc -l) )); then NEW_BRIGHTNESS=1; fi; light -S "$NEW_BRIGHTNESS"; notify-send -h string:x-canonical-private-synchronous:my-notification --expire-time=1000 "Brightness " $(light)'
+
 ## wpctl get-volume @DEFAULT_AUDIO_SINK@
 
 bindsym $mod+p exec 'grim -g "$(slurp)" ~/Screenshots/$(date +%Hh_%Mm_%Ss_%d_%B_%Y).png'
 bindsym Print exec grim -g "$(slurp)" - | wl-copy
+
+exec mako
 
 
 include /etc/sway/config.d/*
