@@ -19,8 +19,8 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   networking.extraHosts = ''
-    127.0.0.1	www.course.local
-    127.0.0.1 	www.admin.local
+    127.0.0.1 www.course.local
+    127.0.0.1 www.admin.local
     127.0.0.1	www.public.local
     127.0.0.1	www.dad.local
   '';
