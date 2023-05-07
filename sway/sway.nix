@@ -3,14 +3,14 @@
 {
     environment.systemPackages = with pkgs; [
         mate.mate-polkit
-	    fuzzel
+        fuzzel
         foot
-	    kitty
-	    slurp
-	    grim
-	    xfce.thunar
-	    xfce.tumbler
-	    ffmpegthumbnailer
+        kitty
+        slurp
+        grim
+        xfce.thunar
+        xfce.tumbler
+        ffmpegthumbnailer
         gthumb
         gnome.gnome-disk-utility
         arc-theme
