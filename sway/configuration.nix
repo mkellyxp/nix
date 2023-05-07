@@ -21,13 +21,6 @@
   networking.hostName = "swayin"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  networking.extraHosts = ''
-    127.0.0.1 www.course.local
-    127.0.0.1 www.admin.local
-    127.0.0.1	www.public.local
-    127.0.0.1	www.dad.local
-  '';
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -135,8 +128,6 @@
 	filezilla
 	gthumb
 	beekeeper-studio
-	php80
-	nodejs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -148,81 +139,7 @@
   # };
 
   # List services that you want to enable:
-
-  services.mysql = {
-  	enable = true;
-  	package = pkgs.mariadb;
-  };
-
-  services.nginx = {
-  	enable = true;
-	virtualHosts."www.admin.local" = {
-		root = "/var/www/vip_member_vault_admin";
-		locations."= /" = {
-              		extraConfig = ''
-                		rewrite ^ /index.php;
-              		'';
-          	};
-		locations."/".extraConfig = ''
-			try_files $uri $uri/ /index.php?$query_string;
-		'';
-		locations."~ \.php$".extraConfig = ''
-			fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-			fastcgi_index index.php;
-		'';
-
-	};
-	virtualHosts."www.course.local" = {
-		root = "/var/www/vip_member_vault";
-		locations."= /" = {
-              		extraConfig = ''
-                		rewrite ^ /index.php;
-              		'';
-          	};
-		locations."/".extraConfig = ''
-			try_files $uri $uri/ /index.php?$query_string;
-		'';
-		locations."~ \.php$".extraConfig = ''
-			fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-			fastcgi_index index.php;
-		'';
-
-	};
-	virtualHosts."www.public.local" = {
-		root = "/var/www/public_site_2023";
-		locations."= /" = {
-              		extraConfig = ''
-                		rewrite ^ /index.php;
-              		'';
-          	};
-		locations."/".extraConfig = ''
-			try_files $uri $uri/ /$uri.php;
-		'';
-		locations."~ \.php$".extraConfig = ''
-			fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-			fastcgi_index index.php;
-		'';
-
-	};
-
-
-  };
-
-  services.phpfpm = {
-  	pools.mypool = {
-		phpPackage = pkgs.php80;
-  		user = "nobody";
-		settings = {
-			pm = "dynamic";
-			"listen.owner" = config.services.nginx.user;
-			"pm.max_children" = 5;
-			"pm.start_servers" = 2;
-			"pm.min_spare_servers" = 1;
-			"pm.max_spare_servers" = 3;
-			"pm.max_requests" = 500;
-		};
-  	};
-};
+  
 
 
   # Enable the OpenSSH daemon.
