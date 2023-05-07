@@ -255,6 +255,7 @@ bindsym $mod+p exec 'grim -g "$(slurp)" ~/Screenshots/$(date +%Hh_%Mm_%Ss_%d_%B_
 bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
 exec mako
+exec /nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1 & 
 
 
 include /etc/sway/config.d/*
