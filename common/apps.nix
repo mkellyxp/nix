@@ -13,5 +13,6 @@
 	    tdesktop
 	    filezilla
 	    beekeeper-studio
+        appimage-run
     ];
 }
