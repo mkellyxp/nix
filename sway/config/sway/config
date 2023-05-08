@@ -259,8 +259,8 @@ bindsym XF86AudioLowerVolume exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; no
 bindsym XF86AudioMute exec 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; notify-send --expire-time=1000 -h string:x-canonical-private-synchronous:my-notification $(wpctl get-volume @DEFAULT_AUDIO_SINK@)'
 
 ### Brightness Controls ###
-bindsym XF86MonBrightnessUp exec 'light -A 10; notify-send -h string:x-canonical-private-synchronous:my-notification --expire-time=1000 "Brightness " $(light)'
-bindsym XF86MonBrightnessDown exec 'BRIGHTNESS=$(light -G); NEW_BRIGHTNESS=$(echo "$BRIGHTNESS - 10" | bc); if (( $(echo "$NEW_BRIGHTNESS <= 0" | bc -l) )); then NEW_BRIGHTNESS=1; fi; light -S "$NEW_BRIGHTNESS"; notify-send -h string:x-canonical-private-synchronous:my-notification --expire-time=1000 "Brightness " $(light)'
+bindsym XF86MonBrightnessUp exec 'light -A 5; notify-send -h string:x-canonical-private-synchronous:my-notification --expire-time=1000 "Brightness " $(light)' 
+bindsym XF86MonBrightnessDown exec 'BRIGHTNESS=$(light -G); NEW_BRIGHTNESS=$(echo "$BRIGHTNESS - 5" | bc); if (( $(echo "$NEW_BRIGHTNESS <= 0" | bc -l) )); then NEW_BRIGHTNESS=1; fi; light -S "$NEW_BRIGHTNESS"; notify-send -h string:x-canonical-private-synchronous:my-notification --expire-time=1000 "Brightness " $(light)'
 
 ## wpctl get-volume @DEFAULT_AUDIO_SINK@
 
