@@ -30,6 +30,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 output eDP-1 scale 1.20
 output HDMI-A-1 resolution 1920x1080@75Hz
+output DP-1 scale 1.20
 
 output * bg ~/.config/sway/wallpaper.png fill
 
