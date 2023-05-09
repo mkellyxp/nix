@@ -15,5 +15,6 @@
 	    filezilla
 	    beekeeper-studio
         appimage-run
+		vlc
     ];
 }
