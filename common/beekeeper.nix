@@ -1,7 +1,7 @@
 { lib, fetchurl, appimageTools, pkgs }:
 
 let
-  pname = "beekeeper-studio-ultimate";
+  pname = "beekeeper-studio";
   version = "3.9.9";
   name = "${pname}-${version}";
 
