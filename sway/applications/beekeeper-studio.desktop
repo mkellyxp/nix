@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Beekeeper Studio
-Exec=beekeeper-studio --no-sandbox %U --enable-features=UseOzonePlatform --ozone-platform=wayland
+Exec=beekeeper-studio-3.9.9 --no-sandbox %U --enable-features=UseOzonePlatform --ozone-platform=wayland
 Terminal=false
 Type=Application
 Icon=beekeeper-studio
