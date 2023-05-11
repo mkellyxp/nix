@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, fetchurl, appimageTools, pkgs, ... }:
 
 {
     environment.systemPackages = with pkgs; [
@@ -16,5 +16,7 @@
 	    beekeeper-studio
         appimage-run
 		vlc
+		handbrake
+		(pkgs.callPackage ./beekeeper.nix { })
     ];
 }
