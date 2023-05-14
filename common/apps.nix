@@ -14,10 +14,11 @@
 	tdesktop
 	filezilla
 	beekeeper-studio
-        appimage-run
+    appimage-run
 	vlc
 	handbrake
 	gnome-text-editor
 	(pkgs.callPackage ./beekeeper.nix { })
+	(pkgs.callPackage ./minecraft-bedrock.nix { })
     ];
 }
