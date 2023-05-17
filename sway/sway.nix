@@ -55,3 +55,7 @@
 #
 #   Can copy .desktop files from: /run/current-system/sw/share/applications/
 #	to: ~/.local/share/applications
+#
+# To get list of audio outputs and switch
+#   wpctl status
+#   wpctl set-default <ID>
