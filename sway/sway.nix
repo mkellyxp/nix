@@ -59,4 +59,4 @@
 # To get list of audio outputs and switch
 #   wpctl status
 #   wpctl set-default <ID>
-#   WIP: pw-dump | jq '.[0]' (to search outputs)
+#   WIP: pw-dump | jq '.[] | select(.info.props."media.class" == "Audio/Sink") | .id, .info.props."node.description", .info.state'
