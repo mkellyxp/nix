@@ -19,6 +19,8 @@
 	vlc
 	handbrake
 	gnome-text-editor
+    zoom-us
+    elixir
     system76-keyboard-configurator
 	(pkgs.callPackage ./beekeeper.nix { })
 	(pkgs.callPackage ./minecraft-bedrock.nix { })
