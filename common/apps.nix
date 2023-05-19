@@ -11,6 +11,7 @@
 	vscodium
 	gitkraken
 	git
+    jq
 	tdesktop
 	filezilla
 	beekeeper-studio
