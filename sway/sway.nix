@@ -21,6 +21,7 @@
         swaylock
         swayidle
         wl-clipboard
+        playerctl
         libnotify
         mako
     ];
