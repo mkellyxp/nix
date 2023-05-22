@@ -7,4 +7,8 @@
     services.xserver.displayManager.lightdm.enable = true;
     services.xserver.desktopManager.cinnamon.enable = true;
     xdg.portal.enable = true;
+
+    environment.systemPackages = with pkgs; [
+        wmctrl
+    ];
 }

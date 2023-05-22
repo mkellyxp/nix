@@ -12,6 +12,7 @@
         gnomeExtensions.just-perfection
         gnome.gnome-tweaks
         papirus-icon-theme
+        wmctrl
     ];
 }
 
