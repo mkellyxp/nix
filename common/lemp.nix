@@ -60,6 +60,7 @@
               	'';
           	};
 		    locations."/".extraConfig = ''
+                rewrite ^/(.*)/$ /$1 permanent;
 			    try_files $uri $uri/ /$uri.php;
 		    '';
 		    locations."~ \.php$".extraConfig = ''
