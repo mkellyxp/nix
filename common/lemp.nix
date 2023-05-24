@@ -3,6 +3,7 @@
 {
     environment.systemPackages = with pkgs; [
         php80
+        php80Extensions.tidy
 	    nodejs
     ];
 
