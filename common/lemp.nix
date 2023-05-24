@@ -73,7 +73,7 @@
 
     services.phpfpm = {
   	    pools.mypool = {
-		    phpPackage = pkgs.php80;
+		    phpPackage = (pkgs.php80.withExtensions({ enabled, all }: enabled ++ [ all.tidy ]));
   		    user = "nobody";
 		    settings = {
 			    pm = "dynamic";
