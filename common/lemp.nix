@@ -2,8 +2,7 @@
 
 {
     environment.systemPackages = with pkgs; [
-        php80
-        php80Extensions.tidy
+        php81
 	    nodejs
     ];
 
@@ -73,7 +72,7 @@
 
     services.phpfpm = {
   	    pools.mypool = {
-		    phpPackage = (pkgs.php80.withExtensions({ enabled, all }: enabled ++ [ all.tidy ]));
+		    phpPackage = (pkgs.php81.withExtensions({ enabled, all }: enabled ++ [ all.tidy ]));
   		    user = "nobody";
 		    settings = {
 			    pm = "dynamic";
