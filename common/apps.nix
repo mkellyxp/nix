@@ -3,7 +3,7 @@
 {
     environment.systemPackages = with pkgs; [
 	firefox
-	brave
+	google-chrome
 	spotify
 	neovim
 	htop
