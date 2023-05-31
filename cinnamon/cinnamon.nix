@@ -10,5 +10,6 @@
 
     environment.systemPackages = with pkgs; [
         wmctrl
+        rofi
     ];
 }
