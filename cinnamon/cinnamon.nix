@@ -11,5 +11,6 @@
     environment.systemPackages = with pkgs; [
         wmctrl
         rofi
+        papirus-icon-theme
     ];
 }
