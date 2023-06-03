@@ -21,6 +21,7 @@
 	gnome-text-editor
     zoom-us
     elixir
+	inotify-tools
     system76-keyboard-configurator
 	(pkgs.callPackage ./beekeeper.nix { })
 	(pkgs.callPackage ./minecraft-bedrock.nix { })

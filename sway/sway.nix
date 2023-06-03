@@ -22,9 +22,13 @@
         swayidle
         wl-clipboard
         playerctl
+        bluez
         libnotify
         mako
     ];
+
+    hardware.bluetooth.enable = true;
+    services.blueman.enable = true;
 
     services.dbus.enable = true;
     programs.light.enable = true;
