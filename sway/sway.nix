@@ -25,6 +25,7 @@
         bluetuith
         libnotify
         mako
+        unzip
     ];
 
     hardware.bluetooth.enable = true;

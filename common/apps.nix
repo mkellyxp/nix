@@ -23,6 +23,7 @@
     zoom-us
     elixir
 	inotify-tools
+	android-tools
     system76-keyboard-configurator
 	(pkgs.callPackage ./beekeeper.nix { })
 	(pkgs.callPackage ./minecraft-bedrock.nix { })
