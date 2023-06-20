@@ -7,9 +7,10 @@
 	brave
 	spotify
 	neovim
+	micro
 	htop
 	neofetch
-	vscodium
+	vscode
 	gitkraken
 	git
     jq
