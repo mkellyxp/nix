@@ -2,6 +2,7 @@
 
 {
     environment.systemPackages = with pkgs; [
+    gcc
 	firefox
 	google-chrome
 	brave
