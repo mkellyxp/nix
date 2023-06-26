@@ -11,7 +11,7 @@
 	micro
 	htop
 	neofetch
-    vscodium	
+    vscode
 	gitkraken
 	git
     jq

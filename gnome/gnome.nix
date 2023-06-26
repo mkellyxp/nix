@@ -8,9 +8,7 @@
     services.xserver.desktopManager.gnome.enable = true;
 
     environment.systemPackages = with pkgs; [
-        gnomeExtensions.appindicator
         gnomeExtensions.just-perfection
-        gnomeExtensions.workspace-indicator
         gnome.gnome-tweaks
         papirus-icon-theme
         wmctrl
