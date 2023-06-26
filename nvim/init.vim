@@ -8,6 +8,8 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
+lua require('config/treesitter')
+
 set number
 set nowrap
 set tabstop=4
