@@ -6,9 +6,12 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php'] }
+
 call plug#end()
 
 lua require('config/treesitter')
+autocmd BufWritePre *.php PrettierAsync
 
 set number
 set nowrap
