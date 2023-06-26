@@ -26,8 +26,23 @@ let g:netrw_browse_split = 3
 
 map <C-p> <cmd>Files<cr>
 map <C-f> <cmd>RG<cr>
-map <C-w> <cmd>tabclose<cr>
+map <C-w> <cmd>q<cr>
 map <C-e> <cmd>Explore<cr>
 map <C-t> <cmd>tabnew<cr>
-map <A-Right> <cmd>tabnext<cr>
-map <A-Left> <cmd>-tabnext<cr>
+map <C-s> <cmd>w<cr>
+
+map <A-Right> <cmd>tabn<cr>
+map <A-Left> <cmd>tabp<cr>
+
+map <A-1> 1gt
+map <A-2> 2gt
+map <A-3> 3gt
+map <A-4> 4gt
+map <A-5> 5gt
+map <A-6> 6gt
+map <A-7> 7gt
+map <A-8> 8gt
+map <A-9> 9gt
+
+map <A-S-Left> <cmd>-tabm<cr>
+map <A-S-Right> <cmd>+tabm<cr>
