@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'folke/tokyonight.nvim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -18,7 +18,7 @@ set foldlevel=20
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
-colorscheme tokyonight
+colorscheme catppuccin
 
 let g:netrw_liststyle = 3
 let g:netrw_banner = 1
