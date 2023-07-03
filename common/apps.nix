@@ -17,7 +17,6 @@
     jq
 	tdesktop
 	filezilla
-	beekeeper-studio
     appimage-run
 	vlc
 	handbrake
