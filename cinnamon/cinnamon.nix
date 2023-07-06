@@ -12,5 +12,6 @@
         wmctrl
         rofi
         papirus-icon-theme
+        gthumb
     ];
 }

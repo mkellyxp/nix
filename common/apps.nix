@@ -25,6 +25,7 @@
     elixir
 	inotify-tools
 	android-tools
+	stripe-cli
     system76-keyboard-configurator
 	(pkgs.callPackage ./beekeeper.nix { })
 	(pkgs.callPackage ./minecraft-bedrock.nix { })
