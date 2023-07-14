@@ -23,6 +23,8 @@
 	gnome-text-editor
     zoom-us
     elixir
+	gimp
+	inkscape
 	inotify-tools
 	android-tools
 	stripe-cli
