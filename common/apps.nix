@@ -5,7 +5,6 @@
     gcc
 	firefox
 	google-chrome
-	brave
 	spotify
 	neovim
 	micro
