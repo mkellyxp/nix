@@ -4,6 +4,7 @@
     environment.systemPackages = with pkgs; [
     gcc
 	firefox
+	vivaldi
 	google-chrome
 	spotify
 	neovim
