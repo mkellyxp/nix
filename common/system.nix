@@ -18,6 +18,21 @@
         pulse.enable = true;
     };
 
+
+    ## Automatic Updates ##
+
+    nix.gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 7d";
+    };
+
+    system.autoUpgrade = {
+        enable = true;
+    };
+
+
+
     ## Optional Things ##
     #
     # boot.supportedFilesystems = [ "ntfs" ];
