@@ -17,6 +17,7 @@
     jq
 	tdesktop
 	filezilla
+	libreoffice
     appimage-run
 	vlc
 	handbrake
