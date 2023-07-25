@@ -20,6 +20,7 @@
 	libreoffice
     appimage-run
 	vlc
+	siglo
 	handbrake
 	gnome-text-editor
     zoom-us
