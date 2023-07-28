@@ -27,6 +27,8 @@
         options = "--delete-older-than 30d";
     };
 
+    ## To check generations
+    # sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
 
     ## Optional Things ##
