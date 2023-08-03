@@ -26,12 +26,13 @@
     zoom-us
     elixir
 	gimp
+	blackbox-terminal
 	inkscape
 	inotify-tools
 	android-tools
+	heimdall
 	stripe-cli
     system76-keyboard-configurator
 	(pkgs.callPackage ./beekeeper.nix { })
-	(pkgs.callPackage ./minecraft-bedrock.nix { })
     ];
 }
