@@ -9,6 +9,7 @@ let
     url = "https://github.com/beekeeper-studio/ultimate-releases/releases/download/v${version}/Beekeeper-Studio-Ultimate-${version}.AppImage";
     name = "${pname}-${version}.AppImage";
     sha512 = "8491df84d59730442fffb9d294b6b2a3d1730f996f7a98021b2dc4550a24c62a38881913205d28a09a02a8b4c2e9f180cf00887b2a86ee12068f3a309de2baae";
+    ## Run sha512sum Beekeeper-Studio-Ultimate-* to get checksum
   };
 
   appimageContents = appimageTools.extractType2 {
