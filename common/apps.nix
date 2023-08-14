@@ -32,6 +32,7 @@
 	android-tools
 	heimdall
 	stripe-cli
+	dbeaver
     system76-keyboard-configurator
 	(pkgs.callPackage ./beekeeper.nix { })
     ];
