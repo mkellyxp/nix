@@ -107,3 +107,6 @@
 #       extraGroups = [ "networkmanager" "wheel" "video" "nginx" ];
 #        packages = with pkgs; [];
 #   };
+#
+# To see your nginx config put together
+#	less $(systemctl cat nginx | grep -m 1 -o '/nix/store/[0-9a-z]*-nginx.conf')
