@@ -33,6 +33,7 @@
 	heimdall
 	stripe-cli
 	dbeaver
+	burpsuite
     system76-keyboard-configurator
 	(pkgs.callPackage ./beekeeper.nix { })
     ];
