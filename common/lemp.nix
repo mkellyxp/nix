@@ -115,7 +115,7 @@
 #
 # Create www folder in /var, then
 #   sudo chown -R nginx:nginx www
-#   sudo chomd 755 www
+#   sudo chmod -R 775 www
 #
 # Add your user to the nginx group in config like:
 #   users.users.mkelly = {

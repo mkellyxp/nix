@@ -38,3 +38,8 @@
 	(pkgs.callPackage ./beekeeper.nix { })
     ];
 }
+
+## NOTES ##
+#
+# Disable firefox annoying alt menu
+#	ui.key.menuAccessKeyFocuses = false 
