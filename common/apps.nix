@@ -39,3 +39,8 @@
 	(pkgs.callPackage ./minecraft-bedrock.nix { })
     ];
 }
+
+## NOTES ##
+#
+# Disable firefox annoying alt menu
+#	ui.key.menuAccessKeyFocuses = false 
