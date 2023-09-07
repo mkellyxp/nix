@@ -47,6 +47,8 @@
 #
 # Audible convert
 #	nix-shell -p audible-cli aaxtomp3 ffmpeg
+#	audible quickstart
+#	audible activation-bytes
 #	aaxtomp3 --authcode 3a560803 DragonPlanet_ep7.aax	
 #
 # Split audio into smaller files 
