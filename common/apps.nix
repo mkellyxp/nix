@@ -4,7 +4,6 @@
     environment.systemPackages = with pkgs; [
     gcc
 	firefox
-	vivaldi
 	google-chrome
 	spotify
 	neovim
@@ -34,8 +33,10 @@
 	stripe-cli
 	dbeaver
 	burpsuite
+	flashrom
     system76-keyboard-configurator
 	(pkgs.callPackage ./beekeeper.nix { })
+	(pkgs.callPackage ./minecraft-bedrock.nix { })
     ];
 }
 
