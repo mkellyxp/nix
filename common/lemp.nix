@@ -7,6 +7,7 @@
     ];
 
     networking.extraHosts = ''
+		127.0.0.1   course.local
         127.0.0.1   www.course.local
 		127.0.0.1   www.course2.local
         127.0.0.1   www.admin.local
@@ -28,6 +29,22 @@
                     rewrite ^ /index.php;
               	'';
             };
+		    locations."/".extraConfig = ''
+			    try_files $uri $uri/ /index.php?$query_string;
+		    '';
+		    locations."~ \.php$".extraConfig = ''
+			    fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+			    fastcgi_index index.php;
+		    '';
+	    };
+
+		virtualHosts."course.local" = {
+		    root = "/var/www/vip_member_vault";
+		    locations."= /" = {
+                extraConfig = ''
+                    rewrite ^ /index.php;
+              	'';
+          	};
 		    locations."/".extraConfig = ''
 			    try_files $uri $uri/ /index.php?$query_string;
 		    '';

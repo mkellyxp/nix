@@ -10,6 +10,7 @@
 	micro
 	htop
 	neofetch
+	slack
     vscode
 	gitkraken
 	git
