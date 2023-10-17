@@ -8,7 +8,7 @@
     services.xserver.desktopManager.gnome.enable = true;
 
     environment.systemPackages = with pkgs; [
-        gnomeExtensions.just-perfection
+        gnomeExtensions.hide-universal-access
         gnome.gnome-tweaks
         papirus-icon-theme
         wmctrl
