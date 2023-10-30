@@ -19,7 +19,7 @@ in
 appimageTools.wrapType2 {
   inherit name src;
 
-  multiPkgs = null; # no 32bit needed
+  multiPkgs = _: []; # no 32bit needed
   extraPkgs = pkgs: appimageTools.defaultFhsEnvArgs.multiPkgs pkgs ++ [ pkgs.bash ];
 
   extraInstallCommands = ''

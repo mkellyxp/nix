@@ -2,42 +2,29 @@
 
 {
     environment.systemPackages = with pkgs; [
-    gcc
-	firefox
-	google-chrome
-	spotify
-	neovim
-	micro
-	htop
-	neofetch
-	slack
-    vscode
-	gitkraken
-	git
-    jq
-	tdesktop
-	filezilla
-	libreoffice
-    appimage-run
-	vlc
-	siglo
-	handbrake
-	gnome-text-editor
-    zoom-us
-    elixir
-	gimp
-	blackbox-terminal
-	inkscape
-	inotify-tools
-	android-tools
-	heimdall
-	stripe-cli
-	dbeaver
-	burpsuite
-	flashrom
-    system76-keyboard-configurator
-	(pkgs.callPackage ./beekeeper.nix { })
-	(pkgs.callPackage ./minecraft-bedrock.nix { })
+		gcc
+		firefox
+		google-chrome
+		spotify
+		neovim
+		htop
+		neofetch
+		slack
+		vscode
+		gitkraken
+		git
+		tdesktop
+		filezilla
+		libreoffice
+		appimage-run
+		vlc
+		siglo
+		handbrake
+		zoom-us
+		stripe-cli
+		dbeaver	
+		(pkgs.callPackage ./beekeeper.nix { })
+		# (pkgs.callPackage ./minecraft-bedrock.nix { })
     ];
 }
 
