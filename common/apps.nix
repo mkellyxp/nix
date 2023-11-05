@@ -22,7 +22,8 @@
 		handbrake
 		zoom-us
 		stripe-cli
-		dbeaver	
+		dbeaver
+		protonvpn-gui
 		(pkgs.callPackage ./beekeeper.nix { })
 		# (pkgs.callPackage ./minecraft-bedrock.nix { })
     ];
