@@ -25,7 +25,7 @@
 		dbeaver
 		protonvpn-gui
 		(pkgs.callPackage ./beekeeper.nix { })
-		# (pkgs.callPackage ./minecraft-bedrock.nix { })
+		(pkgs.callPackage ./minecraft-bedrock.nix { })
     ];
 }
 
