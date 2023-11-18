@@ -2,13 +2,13 @@
 
 let
   pname = "minecraft-bedrock";
-  version = "0.11.2.718";
+  version = "0.12.1-763";
   name = "${pname}-${version}";
 
   src = fetchurl {
-    url = "https://github.com/minecraft-linux/appimage-builder/releases/download/v0.11.2-718/Minecraft_Bedrock_Launcher-x86_64-v0.11.2.718.AppImage";
+    url = "https://github.com/minecraft-linux/appimage-builder/releases/download/v0.12.1-763/Minecraft_Bedrock_Launcher-x86_64-v0.12.1.763.AppImage";
     name = "${pname}-${version}.AppImage";
-    sha512 = "fdfe63b004a2bd46ba904ff7bdde666637b7c1290ca4c60d1b88123448eb1f6b8896e2389eaecaefad961bdd689a4361b94036fae6a25ca07cadfbaa4878bb5e";
+    sha512 = "f2f985960c480d57deae33341cdf892a9e649febce46554df59dfa0bbee006b47452e76dac399a9ccde8f8082b279345ccc53778b365d33585c1064f0a558a14";
   };
 
   appimageContents = appimageTools.extractType2 {
