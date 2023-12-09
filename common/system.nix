@@ -3,7 +3,8 @@
     {
     ## boot.kernelPackages = pkgs.linuxPackages_latest;
 
-    services.fwupd.enable = true; 
+    services.fwupd.enable = true;
+    services.flatpak.enable = true;
 
     zramSwap.enable = true;
 

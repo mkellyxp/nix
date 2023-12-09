@@ -5,22 +5,13 @@
 		gcc
 		firefox
 		google-chrome
-		spotify
 		neovim
 		htop
 		neofetch
-		slack
 		vscode
-		gitkraken
 		git
-		tdesktop
-		filezilla
-		libreoffice
 		appimage-run
 		vlc
-		siglo
-		handbrake
-		zoom-us
 		stripe-cli
 		dbeaver
 		protonvpn-gui
