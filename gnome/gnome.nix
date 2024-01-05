@@ -12,6 +12,7 @@
         gnome.gnome-tweaks
         papirus-icon-theme
         wmctrl
+        wl-clipboard
     ];
 }
 
