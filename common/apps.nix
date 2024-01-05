@@ -7,6 +7,7 @@
 		librewolf
 		google-chrome
 		neovim
+		helix
 		htop
 		neofetch
 		vscode
