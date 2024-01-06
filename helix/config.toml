@@ -1,0 +1,4 @@
+theme = "ayu_mirage"
+
+[editor]
+bufferline = "always"
