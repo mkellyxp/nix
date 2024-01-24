@@ -10,7 +10,7 @@
 		helix
 		htop
 		neofetch
-		vscode
+		vscodium
 		git
 		appimage-run
 		vlc

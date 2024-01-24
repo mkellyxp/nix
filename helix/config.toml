@@ -2,3 +2,4 @@ theme = "ayu_mirage"
 
 [editor]
 bufferline = "always"
+auto-format = true
