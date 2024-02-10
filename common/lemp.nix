@@ -2,8 +2,10 @@
 
 {
     environment.systemPackages = with pkgs; [
-        php82
+    	php82
 	    nodejs
+			nodePackages.intelephense
+			vscode-langservers-extracted
     ];
 
     networking.extraHosts = ''

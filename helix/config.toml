@@ -1,4 +1,4 @@
-theme = "ayu_mirage"
+theme = "tokyonight"
 
 [editor]
 bufferline = "always"
