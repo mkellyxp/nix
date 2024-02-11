@@ -4,6 +4,10 @@ language-servers = [ "intelephense", "tailwindcss-ls" ]
 auto-format = true
 
 [[language]]
+name = "html"
+language-servers = [ "tailwindcss-ls", "vscode-html-language-server" ]
+
+[[language]]
 name = "elixir"
 auto-format = true
 
