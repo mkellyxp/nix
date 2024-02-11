@@ -8,3 +8,7 @@ mouse = false
 [editor.cursor-shape]
 insert = "bar"
 select = "underline"
+
+[keys.normal]
+C-s = ":w"
+C-w = ":buffer-close"
