@@ -2,3 +2,12 @@
 name = "php"
 language-servers = [ "intelephense", "tailwindcss-ls" ]
 auto-format = true
+
+[[language]]
+name = "elixir"
+auto-format = true
+
+[[language]]
+name = "heex"
+language-servers = [ "elixir-ls",  "tailwindcss-ls", "vscode-html-language-server" ]
+auto-format = true
