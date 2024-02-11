@@ -1,0 +1,4 @@
+[[language]]
+name = "php"
+language-servers = [ "intelephense", "tailwindcss-ls" ]
+auto-format = true

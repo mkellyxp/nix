@@ -6,6 +6,7 @@
 	    nodejs
 			nodePackages.intelephense
 			vscode-langservers-extracted
+			tailwindcss-language-server
     ];
 
     networking.extraHosts = ''

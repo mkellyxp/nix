@@ -8,6 +8,8 @@
 		google-chrome
 		neovim
 		helix
+    nil
+    lf
 		htop
 		neofetch
 		vscodium
