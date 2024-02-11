@@ -3,3 +3,8 @@ theme = "tokyonight"
 [editor]
 bufferline = "always"
 auto-format = true
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
