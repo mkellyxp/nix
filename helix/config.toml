@@ -10,6 +10,6 @@ insert = "bar"
 select = "underline"
 
 [keys.normal]
-C-s = ":w"
+C-s = ":w!"
 C-w = ":buffer-close"
 C-p = "file_picker"
