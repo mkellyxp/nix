@@ -1,9 +1,10 @@
-theme = "tokyonight"
+theme = "catppuccin_mocha"
 
 [editor]
 bufferline = "always"
 auto-format = true
 mouse = false
+line-number = "relative"
 
 [editor.cursor-shape]
 insert = "bar"
