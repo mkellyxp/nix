@@ -1,4 +1,6 @@
-theme = "catppuccin_mocha"
+# theme = "catppuccin_mocha"
+# theme = "onedarker"
+theme = "tokyonight"
 
 [editor]
 bufferline = "always"
@@ -13,4 +15,3 @@ select = "underline"
 [keys.normal]
 C-s = ":w!"
 C-w = ":buffer-close"
-C-p = "file_picker"
