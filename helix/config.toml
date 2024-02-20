@@ -18,4 +18,4 @@ C-w = ":buffer-close"
 
 [keys.insert]
 C-s = [":w!","normal_mode"]
-C-w = ":buffer-close"
+C-w = [":buffer-close","normal_mode"]
