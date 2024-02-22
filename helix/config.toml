@@ -16,7 +16,10 @@ select = "underline"
 C-s = ":w!"
 C-w = ":buffer-close"
 C-a = ":reload-all"
+y = [":clipboard-yank","yank"]
+C-v = [":clipboard-paste-before"]
 
 [keys.insert]
 C-s = [":w!","normal_mode"]
 C-w = [":buffer-close","normal_mode"]
+C-v = [":clipboard-paste-before"]
