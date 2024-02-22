@@ -19,6 +19,7 @@
 		stripe-cli
 		dbeaver
 		protonvpn-gui
+    sublime4
 		(pkgs.callPackage ./beekeeper.nix { })
     ];
 }
