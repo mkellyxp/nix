@@ -23,3 +23,6 @@ C-v = [":clipboard-paste-before"]
 C-s = [":w!","normal_mode"]
 C-w = [":buffer-close","normal_mode"]
 C-v = [":clipboard-paste-before"]
+
+[keys.select]
+y = [":clipboard-yank","yank"]
