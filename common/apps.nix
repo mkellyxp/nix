@@ -19,6 +19,8 @@
 		stripe-cli
 		dbeaver
 		protonvpn-gui
+    kitty
+    nerdfonts
 		(pkgs.callPackage ./beekeeper.nix { })
     ];
 }
