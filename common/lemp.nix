@@ -5,6 +5,7 @@
     	php82
 	    nodejs
 			nodePackages.intelephense
+			nodePackages.typescript-language-server
 			vscode-langservers-extracted
 			tailwindcss-language-server
     ];
