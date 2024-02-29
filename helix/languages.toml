@@ -1,6 +1,6 @@
 [[language]]
 name = "php"
-language-servers = [ "intelephense", "tailwindcss-ls" ]
+language-servers = [ "intelephense", "tailwindcss-ls", "vscode-html-language-server" ]
 auto-format = true
 
 [[language]]
