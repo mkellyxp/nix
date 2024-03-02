@@ -8,8 +8,8 @@
 		google-chrome
 		neovim
 		helix
-    nil
-    yazi
+		nil
+		yazi
 		htop
 		neofetch
 		vscodium
@@ -19,9 +19,14 @@
 		stripe-cli
 		dbeaver
 		protonvpn-gui
-    kitty
-    nerdfonts
+	    nerdfonts
+	    showmethekey
+	    sublime4
 		(pkgs.callPackage ./beekeeper.nix { })
+    ];
+
+    nixpkgs.config.permittedInsecurePackages = [
+        "openssl-1.1.1w"
     ];
 }
 
@@ -38,3 +43,12 @@
 #
 # Split audio into smaller files 
 #	ffmpeg -i Zero\ G-1\ Chapter\ 1.mp3 -f segment -segment_time 600 -c copy chap1-%03d.mp3
+#
+# Sublime Text
+#	Control + Shift + p - Package Control
+#		- Install LSP
+#		- Install LSP Php
+#		- Install LSP tailwindcss
+#		- Install LSP elixir
+#		- LSP Settings ( "lsp_format_on_save": true )
+#		- Key Bindings ( { "keys": ["ctrl+shift+s"], "command": "reveal_in_side_bar" } )
