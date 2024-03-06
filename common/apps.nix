@@ -52,3 +52,5 @@
 #		- Install LSP elixir
 #		- LSP Settings ( "lsp_format_on_save": true )
 #		- Key Bindings ( { "keys": ["ctrl+shift+s"], "command": "reveal_in_side_bar" } )
+#		- LSP Tailwind Settings ( "disabled_capabilities": { "colorProvider": true, }, )
+#		- Preference Settings ( "word_wrap": false, )
