@@ -14,7 +14,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty
+set $term foot
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 ### Output configuration
@@ -28,9 +28,6 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output eDP-1 scale 1.20
-output HDMI-A-1 resolution 1920x1080@75Hz scale 1.10
-output DP-1 scale 1.20
 
 output * bg ~/.config/sway/wallpaper.png fill
 
