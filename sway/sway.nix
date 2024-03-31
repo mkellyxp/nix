@@ -76,3 +76,7 @@
 #   git config --global user.email "mike@membervault.co"
 #   git config --global user.name "Mike Kelly"
 #   (go to github, settings / access)
+#   
+#   In every session to not have to type password over and over:
+#   eval "$(ssh-agent -s)"
+#   ssh-add ~/.ssh/id_ed25519
