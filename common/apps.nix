@@ -12,7 +12,7 @@
 		yazi
 		htop
 		neofetch
-		vscodium
+    vscode
 		git
 		appimage-run
 		vlc
