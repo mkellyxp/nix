@@ -17,3 +17,6 @@ name = "heex"
 language-id = "phoenix-heex"
 language-servers = [ "elixir-ls", "tailwindcss-ls", "vscode-html-language-server" ]
 auto-format = true
+
+[language-server.intelephense.config.diagnostics]
+undefinedProperties = false
