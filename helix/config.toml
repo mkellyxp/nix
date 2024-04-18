@@ -24,6 +24,8 @@ X = ["extend_line_up", "extend_to_line_bounds"]
 C-s = [":w!","normal_mode"]
 C-w = [":buffer-close","normal_mode"]
 C-v = [":clipboard-paste-before"]
+C-right = [":bn"]
+C-left = [":bp"]
 
 [keys.select]
 y = [":clipboard-yank","yank"]
