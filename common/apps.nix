@@ -19,9 +19,9 @@
 		stripe-cli
 		dbeaver
 		protonvpn-gui
-	    nerdfonts
-	    showmethekey
-	    sublime4
+	  nerdfonts
+	  showmethekey
+	  sublime4
 		(pkgs.callPackage ./beekeeper.nix { })
     ];
 
