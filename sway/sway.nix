@@ -58,6 +58,11 @@
 #       packages = with pkgs; [];
 #   };
 #
+# Theme Flatpak:
+#   flatpak install arc-dark flatseal
+#   GTK_THEME = Arc-Dark
+#   
+#
 # To launch chromium apps in wayland, add:
 # 	--enable-features=UseOzonePlatform --ozone-platform=wayland
 #
