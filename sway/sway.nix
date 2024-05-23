@@ -65,6 +65,9 @@
 #
 # To launch chromium apps in wayland, add:
 # 	--enable-features=UseOzonePlatform --ozone-platform=wayland
+#   
+# To set flatpaks to open in wayland, set env variable
+#   ELECTRON_OZONE_PLATFORM_HINT=auto
 #
 #   Can copy .desktop files from: /run/current-system/sw/share/applications/
 #	to: ~/.local/share/applications
