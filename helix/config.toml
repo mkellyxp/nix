@@ -19,7 +19,6 @@ C-v = [":clipboard-paste-before"]
 C-right = [":bn"]
 C-left = [":bp"]
 X = ["extend_line_up", "extend_to_line_bounds"]
-p = "paste_before"
 
 [keys.insert]
 C-s = [":w!","normal_mode"]
