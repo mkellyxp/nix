@@ -8,6 +8,7 @@
 		google-chrome
 		neovim
 		helix
+    zellij
 		nil
 		yazi
 		htop
