@@ -6,9 +6,9 @@
 		firefox
 		librewolf
 		google-chrome
+    brave
 		neovim
 		helix
-    zellij
 		nil
 		yazi
 		htop
