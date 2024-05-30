@@ -18,6 +18,7 @@
       127.0.0.1   www.public.local
       127.0.0.1	  www.dad.local
       127.0.0.1	  www.design.local
+      127.0.0.1	  www.udon.local
     '';
 
     services.mysql = {
@@ -110,6 +111,19 @@
 
 	    virtualHosts."www.design.local" = {
 		    root = "/var/www/membervault-html/public/admin";
+		    locations."= /" = {
+                extraConfig = ''
+                	rewrite ^ /index.php;
+              	'';
+          	};
+		    locations."~ \.php$".extraConfig = ''
+			    fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+			    fastcgi_index index.php;
+		    '';
+	    };
+			
+	    virtualHosts."www.udon.local" = {
+		    root = "/var/www/udon";
 		    locations."= /" = {
                 extraConfig = ''
                 	rewrite ^ /index.php;
