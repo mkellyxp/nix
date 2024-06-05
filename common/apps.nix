@@ -18,7 +18,6 @@
 		appimage-run
 		vlc
 		stripe-cli
-		dbeaver
 		protonvpn-gui
 	  nerdfonts
 	  showmethekey
