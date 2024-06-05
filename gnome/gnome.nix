@@ -10,6 +10,7 @@
     environment.systemPackages = with pkgs; [
         gnomeExtensions.hide-universal-access
         gnomeExtensions.steal-my-focus-window
+        gnome.gnome-themes-extra
         gnome.gnome-tweaks
         papirus-icon-theme
         wmctrl
