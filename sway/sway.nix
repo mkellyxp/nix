@@ -5,7 +5,7 @@
         mate.mate-polkit
         fuzzel
         foot
-        kitty
+        alacritty
         slurp
         grim
         xfce.thunar
@@ -22,7 +22,8 @@
         swayidle
         wl-clipboard
         playerctl
-        bluetuith
+        blueman
+        pwvucontrol
         libnotify
         mako
         unzip
