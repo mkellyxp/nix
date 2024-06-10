@@ -14,7 +14,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty
+set $term foot
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 ### Output configuration

@@ -12,7 +12,7 @@
 		nil
 		yazi
 		htop
-		neofetch
+		fastfetch
     vscode
 		git
 		appimage-run

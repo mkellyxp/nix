@@ -5,7 +5,6 @@
         mate.mate-polkit
         fuzzel
         foot
-        alacritty
         slurp
         grim
         xfce.thunar
