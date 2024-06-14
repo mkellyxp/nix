@@ -21,6 +21,7 @@
 		protonvpn-gui
 	  nerdfonts
 	  showmethekey
+    scrcpy
 	  sublime4
 		(pkgs.callPackage ./beekeeper.nix { })
     ];
