@@ -11,6 +11,7 @@
 		helix
 		nil
 		yazi
+    lazygit
 		htop
 		fastfetch
     vscode
@@ -22,12 +23,7 @@
 	  nerdfonts
 	  showmethekey
     scrcpy
-	  sublime4
 		(pkgs.callPackage ./beekeeper.nix { })
-    ];
-
-    nixpkgs.config.permittedInsecurePackages = [
-        "openssl-1.1.1w"
     ];
 }
 
