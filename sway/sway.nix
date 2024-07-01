@@ -88,3 +88,5 @@
 #   In every session to not have to type password over and over:
 #   eval "$(ssh-agent -s)"
 #   ssh-add ~/.ssh/id_ed25519
+#
+#   In github, go to Settings, SSH keys and add key from ~/.ssh/xxx.pub
