@@ -3,6 +3,8 @@
 {
     ## boot.kernelPackages = pkgs.linuxPackages_latest;
 
+    boot.kernel.sysctl = { "vm.swappiness" = 10;};
+
     services.fwupd.enable = true;
     services.flatpak.enable = true;
 
