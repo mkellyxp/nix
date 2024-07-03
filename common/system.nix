@@ -8,7 +8,7 @@
     services.fwupd.enable = true;
     services.flatpak.enable = true;
 
-    zramSwap.enable = true;
+    #zramSwap.enable = true;
 
     # Enable sound with pipewire.
     sound.enable = true;
