@@ -24,6 +24,8 @@ ssh-keygen -t ed25519 -C "mike@membervault.co"
 git config --global user.email "mike@membervault.co"
 git config --global user.name "Mike Kelly"
 
+git -C ~/Projects/nix remote set-url origin git@github.com:mkellyxp/nix.git
+
 sudo mkdir /var/www
 sudo chown -R nginx:nginx /var/www
 sudo chmod -R 775 /var/www
@@ -33,3 +35,5 @@ sudo mariadb -uroot -e "flush privileges"
 
 echo 'Set your local user in config to:'
 echo 'extraGroups = [ "networkmanager" "wheel" "video" "nginx" ];';
+echo ' '
+echo 'Remember to set your SSH key in Github!'
