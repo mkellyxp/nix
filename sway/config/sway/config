@@ -281,3 +281,4 @@ exec /nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{p
 
 
 include /etc/sway/config.d/*
+include extra
