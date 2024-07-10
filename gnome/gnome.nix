@@ -7,11 +7,15 @@
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.desktopManager.gnome.enable = true;
 
+    virtualisation.libvirtd.enable = true;
+    boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
+
     environment.systemPackages = with pkgs; [
         gnomeExtensions.hide-universal-access
         gnomeExtensions.steal-my-focus-window
         gnome.gnome-themes-extra
         gnome.gnome-tweaks
+        gnome.gnome-boxes
         papirus-icon-theme
         wmctrl
         wl-clipboard
