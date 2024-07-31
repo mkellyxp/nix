@@ -25,6 +25,9 @@ git config --global user.email "mike@membervault.co"
 git config --global user.name "Mike Kelly"
 
 git -C ~/Projects/nix remote set-url origin git@github.com:mkellyxp/nix.git
+# git -C /var/www/vip_member_vault_admin remote set-url origin git@github.com:mkellyxp/vip_member_vault_admin.git
+# git -C /var/www/vip_member_vault remote set-url origin git@github.com:mkellyxp/vip_member_vault.git
+# git -C /var/www/public_site_2023 remote set-url origin git@github.com:mkellyxp/public_site_2023.git
 
 sudo mkdir /var/www
 sudo chown -R nginx:nginx /var/www
