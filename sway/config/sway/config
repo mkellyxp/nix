@@ -240,18 +240,6 @@ smart_borders on
 smart_gaps on
 gaps inner 10
 
-
-# Apps for workspaces
-assign [app_id="firefox"] workspace 1
-assign [app_id="brave"] workspace 1
-assign [app_id="codium-url-handler"] workspace 2
-assign [app_id="GitKraken"] workspace 3
-assign [app_id="beekeeper-studio"] workspace 4
-assign [app_id="org.telegram.desktop"] workspace 10
-assign [app_id="Spotify"] workspace 10
-# Get app_id with swaymsg -t get_tree
-
-
 ## Volume Controls ##
 bindsym XF86AudioRaiseVolume exec 'wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; notify-send -h string:x-canonical-private-synchronous:my-notification --expire-time=1000 $(wpctl get-volume @DEFAULT_AUDIO_SINK@)'
 bindsym XF86AudioLowerVolume exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; notify-send --expire-time=1000 -h string:x-canonical-private-synchronous:my-notification $(wpctl get-volume @DEFAULT_AUDIO_SINK@)'
