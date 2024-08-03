@@ -12,6 +12,7 @@
 		nil
 		yazi
     lazygit
+    gitkraken
 		htop
 		fastfetch
     vscode
@@ -23,6 +24,7 @@
 	  nerdfonts
 	  showmethekey
     scrcpy
+    spotify
 		(pkgs.callPackage ./beekeeper.nix { })
     ];
 }
