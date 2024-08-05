@@ -7,3 +7,4 @@ Icon=gitkraken
 Name=GitKraken
 Type=Application
 Version=1.4
+MimeType=x-scheme-handler/gitkraken;
