@@ -13,6 +13,7 @@
     environment.systemPackages = with pkgs; [
         gnomeExtensions.hide-universal-access
         gnomeExtensions.steal-my-focus-window
+        gnomeExtensions.appindicator
         gnome.gnome-themes-extra
         gnome.gnome-tweaks
         gnome.gnome-boxes
