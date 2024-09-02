@@ -17,6 +17,7 @@
         gnome.gnome-themes-extra
         gnome.gnome-tweaks
         gnome.gnome-boxes
+        gnome.gnome-terminal
         papirus-icon-theme
         wmctrl
         wl-clipboard
