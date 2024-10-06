@@ -9,7 +9,8 @@ language-servers = [ "tailwindcss-ls", "vscode-html-language-server" ]
 
 [[language]]
 name = "elixir"
-language-id = "phoenix-heex"
+language-id = "elixir"
+language-servers = [ "elixir-ls" ]
 auto-format = true
 
 [[language]]
