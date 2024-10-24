@@ -4,13 +4,9 @@
     environment.systemPackages = with pkgs; [
 		gcc
 		firefox
-		librewolf
-		google-chrome
-    brave
 		neovim
 		helix
 		nil
-		yazi
     lazygit
     gitkraken
 		htop

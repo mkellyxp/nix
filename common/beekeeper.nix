@@ -2,13 +2,13 @@
 
 let
   pname = "beekeeper-studio";
-  version = "4.6.4";
+  version = "4.6.8";
   name = "${pname}-${version}";
 
   src = fetchurl {
     url = "https://github.com/beekeeper-studio/ultimate-releases/releases/download/v${version}/Beekeeper-Studio-Ultimate-${version}.AppImage";
     name = "${pname}-${version}.AppImage";
-    sha512 = "791af99b01f28a749c253d8bd523d5225fde9eb5d49da842fbf4428c858630c89fd7221f59e5122a514de4bea64e9ab5f1c948b9722bcbc96b28a885723c0148";
+    sha512 = "a0ac0fda3925392014f22941f2125242f370dc05c8c0d88003044da3a859df20eaec99bba9b8fb3e695a628555dfde534d1439237e80648ddcd479395ab29dfc";
     ## Run sha512sum Beekeeper-Studio-Ultimate-* to get checksum
   };
 
