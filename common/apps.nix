@@ -3,6 +3,7 @@
 {
     environment.systemPackages = with pkgs; [
 		gcc
+    libnotify
 		firefox
 		neovim
 		helix
@@ -20,7 +21,6 @@
 	  nerdfonts
 	  showmethekey
     scrcpy
-    spotify
 		(pkgs.callPackage ./beekeeper.nix { })
     ];
 }
