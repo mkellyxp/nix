@@ -3,6 +3,7 @@
 {
     environment.systemPackages = with pkgs; [
     	php82
+			mysql80
 	    nodejs
 			nodePackages.intelephense
 			nodePackages.typescript-language-server
