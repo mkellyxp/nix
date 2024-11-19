@@ -23,7 +23,7 @@
 
     services.mysql = {
   	    enable = true;
-  	    package = pkgs.mariadb_110;
+  	    package = pkgs.mariadb;
     };
 
     services.nginx = {
