@@ -21,6 +21,7 @@
 	  nerdfonts
 	  showmethekey
     scrcpy
+    obs-studio
 		(pkgs.callPackage ./beekeeper.nix { })
     ];
 }
