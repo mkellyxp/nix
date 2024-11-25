@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    ## boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelPackages = pkgs.linuxPackages_latest;
 
     boot.kernel.sysctl = { "vm.swappiness" = 10;};
 
