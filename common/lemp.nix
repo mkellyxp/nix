@@ -7,6 +7,7 @@
 	    nodejs
 			nodePackages.intelephense
 			nodePackages.typescript-language-server
+			nodePackages.prettier
 			vscode-langservers-extracted
 			tailwindcss-language-server
     ];

@@ -14,10 +14,10 @@
         gnomeExtensions.hide-universal-access
         gnomeExtensions.steal-my-focus-window
         gnomeExtensions.appindicator
-        gnome.gnome-themes-extra
-        gnome.gnome-tweaks
-        gnome.gnome-boxes
-        gnome.gnome-terminal
+        gnome-themes-extra
+        gnome-tweaks
+        gnome-boxes
+        gnome-terminal
         gthumb
         papirus-icon-theme
         wmctrl
