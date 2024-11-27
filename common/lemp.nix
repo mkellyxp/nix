@@ -142,17 +142,23 @@
 
     services.phpfpm = {
   	    pools.mypool = {
-		    phpPackage = (pkgs.php82.withExtensions({ enabled, all }: enabled ++ [ all.tidy ]));
+		    	phpPackage = (pkgs.php82.withExtensions({ enabled, all }: enabled ++ [ all.tidy ]));
   		    user = "nobody";
-		    settings = {
-			    pm = "dynamic";
-			    "listen.owner" = config.services.nginx.user;
-			    "pm.max_children" = 5;
-			    "pm.start_servers" = 2;
-			    "pm.min_spare_servers" = 1;
-			    "pm.max_spare_servers" = 3;
-			    "pm.max_requests" = 500;
-		    };
+					phpOptions = ''
+			      upload_max_filesize = 512M
+			      post_max_size = 512M
+			      memory_limit = 512M
+			      '';	
+					
+			    settings = {
+				    pm = "dynamic";
+				    "listen.owner" = config.services.nginx.user;
+				    "pm.max_children" = 5;
+				    "pm.start_servers" = 2;
+				    "pm.min_spare_servers" = 1;
+				    "pm.max_spare_servers" = 3;
+				    "pm.max_requests" = 500;
+			    };
   	    };
     };
 
