@@ -22,6 +22,7 @@ C-v = [":clipboard-paste-before"]
 C-right = [":bn"]
 C-left = [":bp"]
 X = ["extend_line_up", "extend_to_line_bounds"]
+c = "change_selection_noyank"
 
 [keys.insert]
 C-s = [":w!","normal_mode"]
