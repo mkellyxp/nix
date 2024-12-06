@@ -15,9 +15,9 @@
         gnomeExtensions.steal-my-focus-window
         gnomeExtensions.appindicator
         gnome-themes-extra
-        gnome.gnome-tweaks
-        gnome.gnome-boxes
-        gnome.gnome-terminal
+        gnome-tweaks
+        gnome-boxes
+        gnome-terminal
         gthumb
         papirus-icon-theme
         wmctrl
