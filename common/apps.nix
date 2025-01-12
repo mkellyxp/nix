@@ -13,7 +13,7 @@
     htop
     fastfetch
     vscode
-    # zed-editor
+    zed-editor
     git
     appimage-run
     vlc
