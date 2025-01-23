@@ -21,3 +21,19 @@ auto-format = true
 
 [language-server.intelephense.config]
 intelephense.diagnostics.undefinedProperties = false
+
+# *** If you have issues with heex files, try this
+#
+# [[language-server]]
+# tailwindcss-ls-ex = { command = "tailwindcss-language-server", args = ["--stdio"], config = { tailwindCSS = { includeLanguages = { "elixir" = "html"}} } }
+
+# [[language]]
+# name = "elixir"
+# auto-format = true
+# language-servers = ["elixir-ls", "tailwindcss-ls-ex"]
+
+# [[language]]
+# name = "heex"
+# auto-format = true
+# language-id = "phoenix-heex"
+# language-servers = ["elixir-ls", "tailwindcss-ls-ex"]
