@@ -26,6 +26,14 @@
         dates = "weekly";
         options = "--delete-older-than 30d";
     };
+
+
+    services.printing.enable = true;
+    services.avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
 }
 
 ## To check generations
