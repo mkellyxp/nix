@@ -45,7 +45,6 @@
 
       garage = nixpkgs.lib.nixosSystem {
         system = system;
-        # Sets inputs & unstable to be eligible to be referenced within .nix top functions { config, lib, pkgs, unstable, ... }:
         specialArgs = { inherit inputs unstable; };
         modules = [
           # Import .nix files
@@ -57,6 +56,23 @@
           # You can also define config options within 'modules'
           {
             networking.hostName = "garage";
+          }
+        ];
+      };
+
+      thelio = nixpkgs.lib.nixosSystem {
+        system = system;
+        specialArgs = { inherit inputs unstable; };
+        modules = [
+          # Import .nix files
+          /etc/nixos/configuration.nix
+
+          # Import a directory (with a default.nix inside)
+          # ./example
+
+          # You can also define config options within 'modules'
+          {
+            networking.hostName = "thelio";
           }
         ];
       };
