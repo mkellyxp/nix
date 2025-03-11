@@ -28,7 +28,7 @@
         specialArgs = { inherit inputs unstable; };
         modules = [
           # Import .nix files
-          ./configuration.nix
+          /etc/nixos/configuration.nix
 
           # Import a directory (with a default.nix inside)
           # ./example
@@ -49,7 +49,7 @@
         specialArgs = { inherit inputs unstable; };
         modules = [
           # Import .nix files
-          ./configuration.nix
+          /etc/nixos/configuration.nix
 
           # Import a directory (with a default.nix inside)
           # ./example
