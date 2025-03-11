@@ -1,1 +1,1 @@
-**Mike Kelly's Nix and Flakeland**
+**Mike Kelly's Nix and Flake Config**
