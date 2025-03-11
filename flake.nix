@@ -7,36 +7,14 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
   };
 
-  outputs = { self, nixpkgs, ... } @ inputs:
-  let
-    system = "x86-64_linux";
-
-    # Set unstable variable to import & define unstable-nixpkgs
-    # By referencing unstable in specialArgs, unstable packages can then be set within environment.systemPackages using unstable.package
-      # eg: unstable.cowsay
-    unstable = import inputs.unstable-nixpkgs {
-      inherit system;
-      config = { allowUnfree = true; };
-      overlays = [ ];
-    };
-  in {
+  outputs = { self, nixpkgs, ... } @ inputs: {
     nixosConfigurations = {
 
       framework = nixpkgs.lib.nixosSystem {
-        system = system;
-        # Sets inputs & unstable to be eligible to be referenced within .nix top functions { config, lib, pkgs, unstable, ... }:
-        specialArgs = { inherit inputs unstable; };
+        system = "x86-64_linux";
         modules = [
-          # Import .nix files
           /etc/nixos/configuration.nix
-
-          # Import a directory (with a default.nix inside)
-          # ./example
-
-          # Import nixosModules from flake inputs
           inputs.nixos-hardware.nixosModules.framework-13-7040-amd
-
-          # You can also define config options within 'modules'
           {
             networking.hostName = "framework";
           }
@@ -44,16 +22,10 @@
       };
 
       garage = nixpkgs.lib.nixosSystem {
-        system = system;
-        specialArgs = { inherit inputs unstable; };
+        system = "x86-64_linux";
+        # specialArgs = { inherit inputs unstable; };
         modules = [
-          # Import .nix files
           /etc/nixos/configuration.nix
-
-          # Import a directory (with a default.nix inside)
-          # ./example
-
-          # You can also define config options within 'modules'
           {
             networking.hostName = "garage";
           }
@@ -61,23 +33,16 @@
       };
 
       thelio = nixpkgs.lib.nixosSystem {
-        system = system;
-        specialArgs = { inherit inputs unstable; };
+        system = "x86-64_linux";
+        # specialArgs = { inherit inputs unstable; };
         modules = [
-          # Import .nix files
           /etc/nixos/configuration.nix
-
-          # Import a directory (with a default.nix inside)
-          # ./example
-
-          # You can also define config options within 'modules'
           {
             networking.hostName = "thelio";
           }
         ];
       };
-
       
     };
-  };
+  };  
 }
