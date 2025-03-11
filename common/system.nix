@@ -51,9 +51,10 @@
     script = ''
       set -eu
       export GIT_SSH=${pkgs.openssh}/bin/ssh
+      export PATH=${pkgs.git}/bin:${pkgs.openssh}/bin:${pkgs.coreutils-full}/bin:${pkgs.util-linux}/bin:${pkgs.flatpak}/bin:$PATH
 
       # Update nixbook configs
-      ${pkgs.git}/bin/git -C /home/mkelly/Projects/nix pull
+      runuser -u mkelly -- ${pkgs.git}/bin/git -C /home/mkelly/Projects/nix pull
 
       # Flatpak Updates
       ${pkgs.coreutils-full}/bin/nice -n 19 ${pkgs.util-linux}/bin/ionice -c 3 ${pkgs.flatpak}/bin/flatpak update --noninteractive --assumeyes
