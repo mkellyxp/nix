@@ -28,13 +28,43 @@
         options = "--delete-older-than 30d";
     };
 
-
     services.printing.enable = true;
     services.avahi = {
       enable = true;
       nssmdns4 = true;
       openFirewall = true;
     };
+
+
+    environment.systemPackages = with pkgs; [
+      git
+      libnotify
+      gawk
+      gnugrep
+      sudo
+      flatpak
+      openssh
+    ];
+
+
+    systemd.services."auto-update-config" = {
+    script = ''
+      set -eu
+      export GIT_SSH=${pkgs.openssh}/bin/ssh
+
+      # Update nixbook configs
+      ${pkgs.git}/bin/git -C /home/mkelly/Projects/nix pull
+
+      # Flatpak Updates
+      ${pkgs.coreutils-full}/bin/nice -n 19 ${pkgs.util-linux}/bin/ionice -c 3 ${pkgs.flatpak}/bin/flatpak update --noninteractive --assumeyes
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
+    wantedBy = [ "multi-user.target" ]; # Ensure the service starts after rebuild
+  };
+
 }
 
 ## To check generations
