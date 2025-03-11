@@ -23,7 +23,6 @@
 
       garage = nixpkgs.lib.nixosSystem {
         system = "x86-64_linux";
-        # specialArgs = { inherit inputs unstable; };
         modules = [
           /etc/nixos/configuration.nix
           {
@@ -34,7 +33,6 @@
 
       thelio = nixpkgs.lib.nixosSystem {
         system = "x86-64_linux";
-        # specialArgs = { inherit inputs unstable; };
         modules = [
           /etc/nixos/configuration.nix
           {
