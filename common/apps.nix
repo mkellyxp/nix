@@ -58,3 +58,5 @@
 # Split audio into smaller files 
 #	ffmpeg -i Zero\ G-1\ Chapter\ 1.mp3 -f segment -segment_time 600 -c copy chap1-%03d.mp3
 #
+# Helix: open file at filename location
+# Ctrl + r / %
