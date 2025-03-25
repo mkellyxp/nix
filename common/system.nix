@@ -46,6 +46,14 @@
       openssh
     ];
 
+    systemd.timers."auto-update-config" = {
+    wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = "1m";
+        OnCalendar = "daily";
+        Unit = "auto-update-config.service";
+      };
+    };
 
     systemd.services."auto-update-config" = {
     script = ''
