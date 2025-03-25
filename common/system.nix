@@ -46,14 +46,6 @@
       openssh
     ];
 
-    systemd.timers."auto-update-config" = {
-    wantedBy = [ "timers.target" ];
-      timerConfig = {
-        OnBootSec = "1m";
-        OnCalendar = "daily";
-        Unit = "auto-update-config.service";
-      };
-    };
 
     systemd.services."auto-update-config" = {
     script = ''
@@ -74,8 +66,8 @@
       export PATH=${pkgs.git}/bin:${pkgs.openssh}/bin:${pkgs.coreutils-full}/bin:${pkgs.util-linux}/bin:${pkgs.flatpak}/bin:$PATH
 
       # Update nixbook configs
-      # runuser -u mkelly -- ${pkgs.git}/bin/git -C /home/mkelly/Projects/nix pull
-
+      git_output=$(runuser -u mkelly -- ${pkgs.git}/bin/git -C /home/mkelly/Projects/nix pull --autostash 2>&1)
+      notify_sessions "Git Updated" "$git_output"
 
       # Flatpak Updates
       flatpak_output=$(${pkgs.coreutils-full}/bin/nice -n 19 ${pkgs.util-linux}/bin/ionice -c 3 ${pkgs.flatpak}/bin/flatpak update --noninteractive --assumeyes 2>&1)
