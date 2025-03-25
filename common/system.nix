@@ -50,20 +50,34 @@
     systemd.services."auto-update-config" = {
     script = ''
       set -eu
+
+      notify_sessions() {
+        local title="$1"
+        local message="$2"
+        sessions=$(loginctl list-sessions --no-legend | ${pkgs.gawk}/bin/awk '{print $1}')
+        for session in $sessions; do
+          user=$(loginctl show-session "$session" -p Name | cut -d'=' -f2)
+          ${pkgs.sudo}/bin/sudo -u "$user" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u "$user")/bus" \
+            ${pkgs.libnotify}/bin/notify-send "$title" "$message"
+        done
+      }
+    
       export GIT_SSH=${pkgs.openssh}/bin/ssh
       export PATH=${pkgs.git}/bin:${pkgs.openssh}/bin:${pkgs.coreutils-full}/bin:${pkgs.util-linux}/bin:${pkgs.flatpak}/bin:$PATH
 
       # Update nixbook configs
-      runuser -u mkelly -- ${pkgs.git}/bin/git -C /home/mkelly/Projects/nix pull
+      # runuser -u mkelly -- ${pkgs.git}/bin/git -C /home/mkelly/Projects/nix pull
+
 
       # Flatpak Updates
-      ${pkgs.coreutils-full}/bin/nice -n 19 ${pkgs.util-linux}/bin/ionice -c 3 ${pkgs.flatpak}/bin/flatpak update --noninteractive --assumeyes
+      flatpak_output=$(${pkgs.coreutils-full}/bin/nice -n 19 ${pkgs.util-linux}/bin/ionice -c 3 ${pkgs.flatpak}/bin/flatpak update --noninteractive --assumeyes 2>&1)
 
-      # sessions=$(loginctl list-sessions --no-legend | ${pkgs.gawk}/bin/awk '{print $1}')
-      # for session in $sessions; do
-      #   user=$(loginctl show-session "$session" -p Name | cut -d'=' -f2)
-      #   ${pkgs.sudo}/bin/sudo -u "$user" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u "$user")/bus" ${pkgs.libnotify}/bin/notify-send "Updating Apps" "Updating Flatpaks now!"
-      # done
+      if echo "$flatpak_output" | grep -q "Nothing to do."; then
+        echo "Flatpak update: Nothing to do. No notification sent."
+      else
+        notify_sessions "Apps Updated" "$flatpak_output"
+      fi
+
 
     '';
     serviceConfig = {
