@@ -5,7 +5,7 @@ bufferline = "always"
 auto-format = true
 mouse = false
 line-number = "relative"
-default-yank-register = "+"
+# default-yank-register = "+"
 
 [editor.file-picker]
 git-ignore = false
@@ -18,7 +18,7 @@ git-ignore = false
 C-s = ":w!"
 C-w = ":buffer-close"
 C-a = ":reload-all"
-# y = [":clipboard-yank","yank"]
+y = [":clipboard-yank","yank"]
 C-v = [":clipboard-paste-before"]
 C-right = [":bn"]
 C-left = [":bp"]
