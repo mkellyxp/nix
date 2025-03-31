@@ -55,6 +55,21 @@
         ];
       };
       
+      thinkpad = nixpkgs.lib.nixosSystem {
+        system = "x86-64_linux";
+        modules = [
+          /etc/nixos/configuration.nix
+          common/system.nix
+          common/apps.nix
+          common/lemp.nix
+          common/elixir.nix
+          gnome/gnome.nix
+          {
+            networking.hostName = "thinkpad";
+          }
+        ];
+      };
+      
     };
   };  
 }
