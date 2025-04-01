@@ -84,6 +84,10 @@
       Type = "oneshot";
       User = "root";
     };
+    
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+  
     wantedBy = [ "multi-user.target" ]; # Ensure the service starts after rebuild
   };
 
