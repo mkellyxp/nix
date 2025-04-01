@@ -46,7 +46,6 @@
       openssh
 
       (writeShellScriptBin "nix-rebuild" ''
-        #!/bin/sh
         sudo nixos-rebuild --flake /home/mkelly/Projects/nix --impure "$@"
       '')
     ];
