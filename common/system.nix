@@ -63,7 +63,7 @@
         for session in $sessions; do
           user=$(loginctl show-session "$session" -p Name | cut -d'=' -f2)
           ${pkgs.sudo}/bin/sudo -u "$user" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u "$user")/bus" \
-            ${pkgs.libnotify}/bin/notify-send "$title" "$message"
+            ${pkgs.libnotify}/bin/notify-send "$title" "$message" 2>/dev/null
         done
       }
     
@@ -90,10 +90,10 @@
       User = "root";
     };
     
-    after = [ "network-online.target" ];
+    after = [ "network-online.target" "systemd-user-sessions.service" "getty@tty1.service" ];
     wants = [ "network-online.target" ];
   
-    wantedBy = [ "multi-user.target" ]; # Ensure the service starts after rebuild
+    wantedBy = [ "default.target" ]; # Ensure the service starts after rebuild
   };
 
 }
