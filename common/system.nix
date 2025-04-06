@@ -50,7 +50,14 @@
       '')
     ];
    
-
+    systemd.timers."auto-update-config" = {
+    wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = "5m";
+        OnCalendar = "daily";
+        Unit = "auto-update-config.service";
+      };
+    };
 
     systemd.services."auto-update-config" = {
     script = ''
@@ -90,7 +97,7 @@
       User = "root";
     };
     
-    after = [ "network-online.target" "systemd-user-sessions.service" "getty@tty1.service" ];
+    after = [ "network-online.target" "graphical.target" ];
     wants = [ "network-online.target" ];
   
     wantedBy = [ "default.target" ]; # Ensure the service starts after rebuild
