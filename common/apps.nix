@@ -5,6 +5,7 @@
     gcc
     libnotify
     firefox
+    brave
     neovim
     helix
     nil
