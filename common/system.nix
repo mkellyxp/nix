@@ -53,55 +53,61 @@
     systemd.timers."auto-update-config" = {
     wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnBootSec = "5m";
         OnCalendar = "daily";
+        Persistent = true;
         Unit = "auto-update-config.service";
       };
     };
 
-    systemd.services."auto-update-config" = {
-    script = ''
-      set -eu
+    systemd.services.auto-update-config = {
+      path = with pkgs; [
+        git
+        nix
+        gnugrep
+        gawk
+        util-linux  # for `ionice`, `runuser`
+        coreutils-full  # for `nice`, `id`, etc.
+        flatpak
+        libnotify
+        sudo
+        systemd  # for `loginctl`
+      ];
 
-      notify_sessions() {
-        local title="$1"
-        local message="$2"
-        sessions=$(loginctl list-sessions --no-legend | ${pkgs.gawk}/bin/awk '{print $1}')
-        for session in $sessions; do
-          user=$(loginctl show-session "$session" -p Name | cut -d'=' -f2)
-          ${pkgs.sudo}/bin/sudo -u "$user" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u "$user")/bus" \
-            ${pkgs.libnotify}/bin/notify-send "$title" "$message" 2>/dev/null
-        done
-      }
-    
-      export GIT_SSH=${pkgs.openssh}/bin/ssh
-      export PATH=${pkgs.git}/bin:${pkgs.openssh}/bin:${pkgs.coreutils-full}/bin:${pkgs.util-linux}/bin:${pkgs.flatpak}/bin:$PATH
+      script = ''
+        set -eu
 
-      # Update nixbook configs
-      git_output=$(runuser -u mkelly -- ${pkgs.git}/bin/git -C /home/mkelly/Projects/nix pull --autostash 2>&1)
-      notify_sessions "Git Updated" "$git_output"
+        notify_sessions() {
+          local title="$1"
+          local message="$2"
+          sessions=$(loginctl list-sessions --no-legend | awk '{print $1}')
+          for session in $sessions; do
+            user=$(loginctl show-session "$session" -p Name | cut -d'=' -f2)
+            sudo -u "$user" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u "$user")/bus" \
+              notify-send "$title" "$message" 2>/dev/null
+          done
+        }
 
-      # Flatpak Updates
-      flatpak_output=$(${pkgs.coreutils-full}/bin/nice -n 19 ${pkgs.util-linux}/bin/ionice -c 3 ${pkgs.flatpak}/bin/flatpak update --noninteractive --assumeyes 2>&1)
+        git_output=$(runuser -u mkelly -- ${pkgs.git}/bin/git -C /home/mkelly/Projects/nix pull --autostash 2>&1)
+        notify_sessions "Git Updated" "$git_output"
 
-      if echo "$flatpak_output" | grep -q "Nothing to do."; then
-        echo "Flatpak update: Nothing to do. No notification sent."
-      else
-        notify_sessions "Apps Updated" "$flatpak_output"
-      fi
+        flatpak_output=$(nice -n 19 ionice -c 3 flatpak update --noninteractive --assumeyes 2>&1)
 
+        if echo "$flatpak_output" | grep -q "Nothing to do."; then
+          echo "Flatpak update: Nothing to do. No notification sent."
+        else
+          notify_sessions "Apps Updated" "$flatpak_output"
+        fi
+      '';
 
-    '';
-    serviceConfig = {
-      Type = "oneshot";
-      User = "root";
+      serviceConfig = {
+        Type = "oneshot";
+        User = "root";
+      };
+
+      after = [ "network-online.target" "graphical.target" ];
+      wants = [ "network-online.target" ];
     };
-    
-    after = [ "network-online.target" "graphical.target" ];
-    wants = [ "network-online.target" ];
-  
-    wantedBy = [ "default.target" ]; # Ensure the service starts after rebuild
-  };
+
 
 }
 
