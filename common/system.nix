@@ -95,8 +95,16 @@ in
       script = ''
         set -eu
 
+        #########  Update Git ##########
         git_output=$(runuser -u mkelly -- ${pkgs.git}/bin/git -C /home/mkelly/Projects/nix pull --autostash 2>&1)
 
+        if echo "$git_output" | grep -q "Already up to date."; then
+          echo "Git Already up to date.  No notification sent."
+        else
+          ${notifyUsersScript}  "Git Updated" "New changes, please run update"
+        fi
+
+        #########  Update Flatpak ##########
         flatpak_output=$(nice -n 19 ionice -c 3 flatpak update --noninteractive --assumeyes 2>&1)
 
         if echo "$flatpak_output" | grep -q "Nothing to do."; then
