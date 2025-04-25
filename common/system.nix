@@ -1,5 +1,24 @@
 { config, pkgs, ... }:
+let
+  ## Notify Users Script
+  notifyUsersScript = pkgs.writeScript "notify-users.sh" ''
+    set -eu
 
+    title="$1"
+    body="$2"
+
+    users=$(${pkgs.systemd}/bin/loginctl list-sessions --no-legend | ${pkgs.gawk}/bin/awk '{print $1}' | while read session; do
+      loginctl show-session "$session" -p Name | cut -d'=' -f2
+    done | sort -u)
+
+    for user in $users; do
+      ${pkgs.sudo}/bin/sudo -u "$user" \
+        DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u "$user")/bus" \
+        ${pkgs.libnotify}/bin/notify-send "$title" "$body"
+    done
+  '';
+
+in
 {
     # boot.kernelPackages = pkgs.linuxPackages_latest;
     # boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -76,26 +95,14 @@
       script = ''
         set -eu
 
-        notify_sessions() {
-          local title="$1"
-          local message="$2"
-          sessions=$(loginctl list-sessions --no-legend | awk '{print $1}')
-          for session in $sessions; do
-            user=$(loginctl show-session "$session" -p Name | cut -d'=' -f2)
-            sudo -u "$user" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u "$user")/bus" \
-              notify-send "$title" "$message" 2>/dev/null
-          done
-        }
-
         git_output=$(runuser -u mkelly -- ${pkgs.git}/bin/git -C /home/mkelly/Projects/nix pull --autostash 2>&1)
-        notify_sessions "Git Updated" "$git_output"
 
         flatpak_output=$(nice -n 19 ionice -c 3 flatpak update --noninteractive --assumeyes 2>&1)
 
         if echo "$flatpak_output" | grep -q "Nothing to do."; then
           echo "Flatpak update: Nothing to do. No notification sent."
         else
-          notify_sessions "Apps Updated" "$flatpak_output"
+          ${notifyUsersScript}  "Apps Updated" "$flatpak_output"
         fi
       '';
 
