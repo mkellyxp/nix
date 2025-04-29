@@ -10,7 +10,7 @@
     helix
     nil
     lazygit
-    gitkraken
+    unstable.gitkraken
     htop
     fastfetch
     vscode

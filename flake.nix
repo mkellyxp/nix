@@ -25,6 +25,7 @@ let
 
       framework = nixpkgs.lib.nixosSystem {
         system = "x86-64_linux";
+        specialArgs = { inherit inputs unstable; };
         modules = [
           /etc/nixos/configuration.nix
           inputs.nixos-hardware.nixosModules.framework-13-7040-amd
@@ -36,6 +37,7 @@ let
 
       garage = nixpkgs.lib.nixosSystem {
         system = "x86-64_linux";
+        specialArgs = { inherit inputs unstable; };
         modules = [
           /etc/nixos/configuration.nix
           {
@@ -57,6 +59,7 @@ let
       
       note = nixpkgs.lib.nixosSystem {
         system = "x86-64_linux";
+        specialArgs = { inherit inputs unstable; };
         modules = [
           /etc/nixos/configuration.nix
           common/system.nix
