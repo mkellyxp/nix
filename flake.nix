@@ -28,6 +28,12 @@ let
         specialArgs = { inherit inputs unstable; };
         modules = [
           /etc/nixos/configuration.nix
+          common/system.nix
+          common/apps.nix
+          common/lemp.nix
+          common/elixir.nix
+          common/rust.nix
+          gnome/gnome.nix
           inputs.nixos-hardware.nixosModules.framework-13-7040-amd
           {
             networking.hostName = "framework";
