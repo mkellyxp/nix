@@ -7,7 +7,20 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
   };
 
-  outputs = { self, nixpkgs, ... } @ inputs: {
+  outputs = { self, nixpkgs, ... } @ inputs: 
+
+let
+
+    # Set unstable variable to import & define unstable-nixpkgs
+    # By referencing unstable in specialArgs, unstable packages can then be set within environment.systemPackages using unstable.package
+      # eg: unstable.cowsay
+    unstable = import inputs.unstable-nixpkgs {
+      config = { allowUnfree = true; };
+      overlays = [ ];
+    };
+  in {
+
+  
     nixosConfigurations = {
 
       framework = nixpkgs.lib.nixosSystem {
@@ -33,6 +46,7 @@
 
       thelio = nixpkgs.lib.nixosSystem {
         system = "x86-64_linux";
+        specialArgs = { inherit inputs unstable; };
         modules = [
           /etc/nixos/configuration.nix
           {
@@ -55,21 +69,7 @@
         ];
       };
       
-      thinkpad = nixpkgs.lib.nixosSystem {
-        system = "x86-64_linux";
-        modules = [
-          /etc/nixos/configuration.nix
-          common/system.nix
-          common/apps.nix
-          common/lemp.nix
-          common/elixir.nix
-          gnome/gnome.nix
-          {
-            networking.hostName = "thinkpad";
-          }
-        ];
-      };
-      
     };
+
   };  
 }

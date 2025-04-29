@@ -1,4 +1,4 @@
-{ config, lib, fetchurl, appimageTools, pkgs, ... }:
+{ config, lib, fetchurl, appimageTools, pkgs, unstable, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -23,6 +23,7 @@
     showmethekey
     scrcpy
     obs-studio
+    unstable.code-cursor
     (pkgs.callPackage ./beekeeper.nix { })
   ];
     
