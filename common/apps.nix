@@ -25,6 +25,7 @@
     obs-studio
     unstable.code-cursor
     unstable.zed-editor
+    (pkgs.callPackage ./beekeeper.nix { })
   ];
     
   nixpkgs.overlays = [
