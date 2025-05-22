@@ -13,11 +13,11 @@ let
   };
 
   appimageContents = appimageTools.extractType2 {
-    inherit name src;
+    inherit pname version src;
   };
 in
 appimageTools.wrapType2 {
-  inherit name src;
+  inherit pname version src;
 
   multiPkgs = _: []; # no 32bit needed
   extraPkgs = pkgs: appimageTools.defaultFhsEnvArgs.multiPkgs pkgs ++ [ pkgs.bash ];

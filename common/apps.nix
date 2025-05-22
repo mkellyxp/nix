@@ -19,7 +19,7 @@
     vlc
     stripe-cli
     protonvpn-gui
-    nerdfonts
+    # nerdfonts
     showmethekey
     scrcpy
     obs-studio
