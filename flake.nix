@@ -2,7 +2,7 @@
   description = "Main Flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     unstable-nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
   };
@@ -32,7 +32,7 @@ let
           common/apps.nix
           common/lemp.nix
           common/elixir.nix
-          gnome/gnome.nix
+          cosmic/cosmic.nix
           inputs.nixos-hardware.nixosModules.framework-13-7040-amd
           {
             networking.hostName = "framework";
