@@ -25,8 +25,13 @@
     obs-studio
     unstable.code-cursor
     unstable.zed-editor
-    (pkgs.callPackage ./beekeeper.nix { })
+    beekeeper-studio
   ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "beekeeper-studio-5.1.5"
+  ];
+
     
   nixpkgs.overlays = [
     (final: prev: {

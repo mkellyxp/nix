@@ -32,7 +32,7 @@ let
           common/apps.nix
           common/lemp.nix
           common/elixir.nix
-          cosmic/cosmic.nix
+          gnome/gnome.nix
           inputs.nixos-hardware.nixosModules.framework-13-7040-amd
           {
             networking.hostName = "framework";
