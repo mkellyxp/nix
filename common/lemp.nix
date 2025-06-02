@@ -3,24 +3,25 @@
 {
     environment.systemPackages = with pkgs; [
     	php82
-			mysql80
+		mysql80
 	    nodejs
-			nodePackages.intelephense
-			nodePackages.typescript-language-server
-			nodePackages.prettier
-			vscode-langservers-extracted
-			tailwindcss-language-server
+		nodePackages.intelephense
+		nodePackages.typescript-language-server
+		nodePackages.prettier
+		vscode-langservers-extracted
+		tailwindcss-language-server
     ];
 
     networking.extraHosts = ''
-			127.0.0.1   course.local
-      127.0.0.1   www.course.local
-			127.0.0.1   www.course2.local
-      127.0.0.1   www.admin.local
-      127.0.0.1   www.public.local
-      127.0.0.1	  www.dad.local
-      127.0.0.1	  www.design.local
-      127.0.0.1	  www.udon.local
+		127.0.0.1	course.local
+      	127.0.0.1   www.course.local
+		127.0.0.1   www.course2.local
+      	127.0.0.1   www.admin.local
+      	127.0.0.1   www.public.local
+      	127.0.0.1	www.dad.local
+      	127.0.0.1	www.design.local
+      	127.0.0.1	www.udon.local
+		127.0.0.1	www.upcycle.local
     '';
 
     services.mysql = {
@@ -96,6 +97,23 @@
 
 	    virtualHosts."www.public.local" = {
 		    root = "/var/www/public_site_2023";
+		    locations."= /" = {
+                extraConfig = ''
+                	rewrite ^ /index.php;
+              	'';
+          	};
+		    locations."/".extraConfig = ''
+                rewrite ^/(.*)/$ /$1 permanent;
+			    try_files $uri $uri/ /$uri.php;
+		    '';
+		    locations."~ \.php$".extraConfig = ''
+			    fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+			    fastcgi_index index.php;
+		    '';
+	    };
+
+	    virtualHosts."www.upcycle.local" = {
+		    root = "/var/www/upcycle_web";
 		    locations."= /" = {
                 extraConfig = ''
                 	rewrite ^ /index.php;
