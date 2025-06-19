@@ -113,7 +113,7 @@
 	    };
 
 	    virtualHosts."www.upcycle.local" = {
-		    root = "/var/www/upcycle_web";
+		    root = "/var/www/upcyclecomputers";
 		    locations."= /" = {
                 extraConfig = ''
                 	rewrite ^ /index.php;
