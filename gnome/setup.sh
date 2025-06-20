@@ -42,3 +42,14 @@ gsettings set org.gnome.desktop.privacy remember-recent-files false
 # Flatpaks
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install -y flathub com.spotify.Client org.telegram.desktop org.signal.Signal
+
+# MV Dev Stuff
+sudo mkdir /var/www
+sudo chown -R nginx:nginx /var/www
+sudo chmod -R 775 /var/www
+
+sudo mariadb -uroot -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'n3wj3rs3y'"
+sudo mariadb -uroot -e "flush privileges"
+
+echo 'Set your local user in config to:'
+echo 'extraGroups = [ "networkmanager" "wheel" "nginx" ];';
