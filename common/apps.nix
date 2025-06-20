@@ -1,4 +1,4 @@
-{ config, lib, fetchurl, appimageTools, pkgs, unstable, ... }:
+{ config, lib, fetchurl, appimageTools, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -19,12 +19,11 @@
     vlc
     stripe-cli
     protonvpn-gui
-    # nerdfonts
     showmethekey
     scrcpy
     obs-studio
-    unstable.code-cursor
-    unstable.zed-editor
+    code-cursor
+    zed-editor
     beekeeper-studio
   ];
 

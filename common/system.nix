@@ -63,10 +63,6 @@ in
       sudo
       flatpak
       openssh
-
-      (writeShellScriptBin "nix-rebuild" ''
-        sudo nixos-rebuild --flake /home/mkelly/Projects/nix --impure "$@"
-      '')
     ];
    
     systemd.timers."auto-update-config" = {
