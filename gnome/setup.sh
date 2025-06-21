@@ -10,6 +10,9 @@ dconf write /org/gnome/desktop/interface/enable-hot-corners false
 dconf write /org/gnome/mutter/dynamic-workspaces false
 dconf write /org/gnome/desktop/wm/preferences/num-workspaces 5
 dconf write /org/gnome/desktop/interface/show-battery-percentage true
+dconf write /org/gnome/desktop/notifications/application/org-gnome-software/enable false
+dconf write /org/gnome/desktop/search-providers/disabled "['org.gnome.Software.desktop']"
+
 
 dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-1 "@as []"
 dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-1 "['<Super>1']"
