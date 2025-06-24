@@ -44,7 +44,7 @@ gsettings set org.gnome.desktop.privacy remember-recent-files false
 
 # Flatpaks
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install -y flathub com.spotify.Client org.telegram.desktop org.signal.Signal
+flatpak install -y flathub com.spotify.Client org.telegram.desktop org.signal.Signal com.slack.Slack
 
 # MV Dev Stuff
 sudo mkdir /var/www
