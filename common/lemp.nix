@@ -160,12 +160,17 @@
 
     services.phpfpm = {
   	    pools.mypool = {
-		    	phpPackage = (pkgs.php82.withExtensions({ enabled, all }: enabled ++ [ all.tidy ]));
+		    	phpPackage = (pkgs.php82.withExtensions({ enabled, all }: enabled ++ [ all.tidy all.apcu all.opcache ]));
   		    user = "nobody";
 					phpOptions = ''
 			      upload_max_filesize = 512M
 			      post_max_size = 512M
 			      memory_limit = 512M
+
+			      apc.enabled = 1
+			      apc.shm_size = 128M
+			      apc.ttl = 0
+			      apc.enable_cli = 0
 			      '';	
 					
 			    settings = {
