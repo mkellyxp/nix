@@ -156,8 +156,7 @@
 	    };
     };
 
-			
-
+	
     services.phpfpm = {
   	    pools.mypool = {
 		    	phpPackage = (pkgs.php82.withExtensions({ enabled, all }: enabled ++ [ all.tidy all.apcu all.opcache ]));
@@ -184,7 +183,36 @@
 			    };
   	    };
     };
+    
+		services.redis = {
+		    enable = true;
+		    package = pkgs.redis;
 
+		    # Use a Unix socket (fast & local)
+		    port = 0;                                   # disable TCP
+		    unixSocket = "/run/redis/redis.sock";
+		    unixSocketPerm = 770;
+
+		    # Optional if you later enable TCP; safe to keep:
+		    bind = "127.0.0.1 ::1";
+
+		    # All Redis config goes here (writes to redis.conf)
+		    settings = {
+		      dir = "/var/lib/redis";                   # <- replaces dataDir
+		      save = [ "900 1" "300 10" "60 10000" ];   # RDB snapshots
+		      appendonly = "yes";                        # AOF on (string form)
+		      appendfsync = "everysec";
+		      maxmemory = "256mb";
+		      "maxmemory-policy" = "allkeys-lru";
+		      # requirepass = "super-long-random-password";  # optional
+		      # rename-command FLUSHALL "";  # optional hardening
+		      # rename-command FLUSHDB "";
+		    };
+		  };
+
+		  # Let your PHP/Nginx user access the socket:
+		  users.users.nginx.extraGroups = [ "redis" ];
+		  users.users.nobody.extraGroups = [ "redis" ];   # or your actual PHP-FPM user
 }
 
 ## NOTES ##

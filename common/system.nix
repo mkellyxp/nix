@@ -49,7 +49,13 @@ in
         options = "--delete-older-than 30d";
     };
 
-    services.printing.enable = true;
+    services.printing = {
+      enable = true;
+      webInterface = true;                  # optional, handy for debugging
+      browsed.enable = true;                # <-- auto-create queues from Avahi
+      # drivers = [ pkgs.gutenprint pkgs.hplipWithPlugin ];  # only if your model needs it
+    };
+
     services.avahi = {
       enable = true;
       nssmdns4 = true;
