@@ -159,17 +159,12 @@
 	
     services.phpfpm = {
   	    pools.mypool = {
-		    	phpPackage = (pkgs.php82.withExtensions({ enabled, all }: enabled ++ [ all.tidy all.apcu all.opcache ]));
+		    	phpPackage = (pkgs.php82.withExtensions({ enabled, all }: enabled ++ [ all.tidy all.redis all.opcache ]));
   		    user = "nobody";
 					phpOptions = ''
 			      upload_max_filesize = 512M
 			      post_max_size = 512M
 			      memory_limit = 512M
-
-			      apc.enabled = 1
-			      apc.shm_size = 128M
-			      apc.ttl = 0
-			      apc.enable_cli = 0
 			      '';	
 					
 			    settings = {
@@ -185,34 +180,30 @@
     };
     
 		services.redis = {
+		  package = pkgs.redis;
+		  servers."" = {
 		    enable = true;
-		    package = pkgs.redis;
-
-		    # Use a Unix socket (fast & local)
-		    port = 0;                                   # disable TCP
+		    port = 0;                                # no TCP
 		    unixSocket = "/run/redis/redis.sock";
 		    unixSocketPerm = 770;
 
-		    # Optional if you later enable TCP; safe to keep:
-		    bind = "127.0.0.1 ::1";
+		    # bind = null;   # (implicit) not needed for socket-only
 
-		    # All Redis config goes here (writes to redis.conf)
 		    settings = {
-		      dir = "/var/lib/redis";                   # <- replaces dataDir
-		      save = [ "900 1" "300 10" "60 10000" ];   # RDB snapshots
-		      appendonly = "yes";                        # AOF on (string form)
+		      dir = "/var/lib/redis";
+		      save = [ "900 1" "300 10" "60 10000" ];
+		      appendonly = "yes";
 		      appendfsync = "everysec";
 		      maxmemory = "256mb";
 		      "maxmemory-policy" = "allkeys-lru";
-		      # requirepass = "super-long-random-password";  # optional
-		      # rename-command FLUSHALL "";  # optional hardening
-		      # rename-command FLUSHDB "";
 		    };
 		  };
+		};
 
-		  # Let your PHP/Nginx user access the socket:
-		  users.users.nginx.extraGroups = [ "redis" ];
-		  users.users.nobody.extraGroups = [ "redis" ];   # or your actual PHP-FPM user
+		# allow PHP/Nginx to access the socket
+		users.users.nginx.extraGroups = [ "redis" ];
+		users.users.nobody.extraGroups = [ "redis" ];
+    
 }
 
 ## NOTES ##
