@@ -27,9 +27,10 @@
     beekeeper-studio
   ];
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "beekeeper-studio-5.1.5"
-  ];
+  nixpkgs.config.allowInsecurePredicate =
+    pkg: builtins.elem (lib.getName pkg) [
+      "beekeeper-studio"   # matches any version
+    ];
 
     
   nixpkgs.overlays = [
