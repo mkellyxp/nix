@@ -22,7 +22,6 @@
     showmethekey
     scrcpy
     obs-studio
-    code-cursor
     zed-editor
     beekeeper-studio
   ];
