@@ -11,7 +11,7 @@ line-number = "relative"
 git-ignore = false
 
 [editor.cursor-shape]
-# insert = "bar"
+insert = "bar"
 # select = "underline"
 
 [keys.normal]
