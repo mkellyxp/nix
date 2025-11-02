@@ -31,6 +31,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 output * bg ~/.config/sway/wallpaper.png fill
 output eDP-1 scale 1.0
+output LVDS-1 scale 1.0
 
 # For scaling native scaling, icon is size 24
 seat seat0 xcursor_theme Adwaita 24

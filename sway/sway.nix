@@ -11,7 +11,7 @@
         xfce.tumbler
         ffmpegthumbnailer
         gthumb
-        gnome.gnome-disk-utility
+        gnome-disk-utility
         arc-theme
         xorg.xlsclients
         xdg-utils

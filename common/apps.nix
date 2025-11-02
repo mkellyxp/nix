@@ -5,8 +5,6 @@
     gcc
     libnotify
     firefox
-    brave
-    neovim
     helix
     nil
     lazygit
@@ -19,8 +17,6 @@
     vlc
     stripe-cli
     protonvpn-gui
-    showmethekey
-    scrcpy
     obs-studio
     zed-editor
     beekeeper-studio
