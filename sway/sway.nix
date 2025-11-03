@@ -45,6 +45,15 @@
     programs.sway = {
         enable = true;
         wrapperFeatures.gtk = true;
+        extraSessionCommands = ''
+            export GTK_THEME=Arc-Dark
+            export XCURSOR_THEME=Adwaita
+            export XCURSOR_SIZE=24
+        '';
+    };
+
+    environment.variables = {
+        GTK_THEME = "Arc-Dark";
     };
 }
 
