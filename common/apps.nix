@@ -26,25 +26,7 @@
     pkg: builtins.elem (lib.getName pkg) [
       "beekeeper-studio"   # matches any version
     ];
-
     
-  nixpkgs.overlays = [
-    (final: prev: {
-      gitkraken = prev.gitkraken.overrideAttrs (oldAttrs: rec {
-        desktopItems = [
-          (prev.makeDesktopItem {
-            name = "GitKraken";
-            exec = "gitkraken --enable-features=UseOzonePlatform --ozone-platform=wayland";
-            icon = "gitkraken";
-            desktopName = "GitKraken Desktop";
-            genericName = "Git Client";
-            categories = [ "Development" ];
-            comment = "Unleash your repo";
-          })
-        ];
-      });
-    })
-  ];
 }
 
 ## NOTES ##
