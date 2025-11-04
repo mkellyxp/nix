@@ -15,3 +15,6 @@
         gthumb
     ];
 }
+
+## NOTES ##
+# gsettings set org.cinnamon.desktop.wm.preferences num-workspaces 5
