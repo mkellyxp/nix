@@ -1,2 +1,3 @@
 * {all: unset;}
 @import url("/run/current-system/sw/share/themes/Arc-Dark/gtk-4.0/gtk-dark.css");
+@import 'colors.css';

@@ -4,7 +4,7 @@ theme = "tokyonight_moon"
 bufferline = "always"
 auto-format = true
 mouse = false
-line-number = "relative"
+# line-number = "relative"
 # default-yank-register = "+"
 
 [editor.file-picker]
