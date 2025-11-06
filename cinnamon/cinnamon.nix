@@ -13,6 +13,8 @@
         rofi
         papirus-icon-theme
         gthumb
+        wl-clipboard
+        xclip
     ];
 }
 
