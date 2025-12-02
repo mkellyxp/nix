@@ -19,6 +19,11 @@ language-id = "phoenix-heex"
 language-servers = [ "elixir-ls", "tailwindcss-ls", "vscode-html-language-server" ]
 auto-format = true
 
+[[language]]
+name = "nix"
+formatter = { command = "nixfmt" }
+auto-format = true
+
 [language-server.intelephense.config]
 intelephense.diagnostics.undefinedProperties = false
 

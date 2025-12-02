@@ -6,7 +6,7 @@
     libnotify
     firefox
     helix
-    nil
+    nixfmt
     lazygit
     gitkraken
     htop
@@ -22,11 +22,11 @@
     beekeeper-studio
   ];
 
-  nixpkgs.config.allowInsecurePredicate =
-    pkg: builtins.elem (lib.getName pkg) [
-      "beekeeper-studio"   # matches any version
+  nixpkgs.config.allowInsecurePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "beekeeper-studio" # matches any version
     ];
-    
+
 }
 
 ## NOTES ##
