@@ -1,4 +1,11 @@
-{ config, lib, fetchurl, appimageTools, pkgs, ... }:
+{
+  config,
+  lib,
+  fetchurl,
+  appimageTools,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -22,7 +29,8 @@
     beekeeper-studio
   ];
 
-  nixpkgs.config.allowInsecurePredicate = pkg:
+  nixpkgs.config.allowInsecurePredicate =
+    pkg:
     builtins.elem (lib.getName pkg) [
       "beekeeper-studio" # matches any version
     ];
@@ -32,15 +40,15 @@
 ## NOTES ##
 #
 # Disable firefox annoying alt menu
-#	ui.key.menuAccessKeyFocuses = false 
+#	ui.key.menuAccessKeyFocuses = false
 #
 # Audible convert
 #	nix-shell -p audible-cli aaxtomp3 ffmpeg
 #	audible quickstart
 #	audible activation-bytes
-#	aaxtomp3 --authcode 3a560803 DragonPlanet_ep7.aax	
+#	aaxtomp3 --authcode 3a560803 DragonPlanet_ep7.aax
 #
-# Split audio into smaller files 
+# Split audio into smaller files
 #	ffmpeg -i Zero\ G-1\ Chapter\ 1.mp3 -f segment -segment_time 600 -c copy chap1-%03d.mp3
 #
 # Helix: open file at filename location
