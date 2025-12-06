@@ -50,6 +50,8 @@
 #
 # Split audio into smaller files
 #	ffmpeg -i Zero\ G-1\ Chapter\ 1.mp3 -f segment -segment_time 600 -c copy chap1-%03d.mp3
+# ONE LINE FOR YOTO
+# i=1; for f in *.mp3; do ffmpeg -i "$f" -f segment -segment_time 600 -c copy "chap${i}-%03d.mp3"; i=$((i+1)); done
 #
 # Helix: open file at filename location
 # Ctrl + r / %
