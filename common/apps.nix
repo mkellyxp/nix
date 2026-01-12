@@ -25,7 +25,6 @@
     stripe-cli
     protonvpn-gui
     obs-studio
-    zed-editor
     beekeeper-studio
   ];
 
