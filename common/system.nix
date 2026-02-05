@@ -82,6 +82,7 @@ in
     pciutils
     ntfs3g
     fio
+    hdparm
   ];
 
   systemd.timers."auto-update-config" = {
