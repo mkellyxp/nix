@@ -31,6 +31,10 @@ in
   services.flatpak.enable = true;
 
   #zramSwap.enable = true;
+  #
+  boot.blacklistedKernelModules = [ "ntfs3" ];
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
 
   # Enable sound with pipewire.
   # sound.enable = true;
@@ -76,6 +80,8 @@ in
     flatpak
     openssh
     pciutils
+    ntfs3g
+    fio
   ];
 
   systemd.timers."auto-update-config" = {
