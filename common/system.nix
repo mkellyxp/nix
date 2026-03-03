@@ -83,6 +83,7 @@ in
     ntfs3g
     fio
     nwipe
+    smartmontools
   ];
 
   systemd.timers."auto-update-config" = {
