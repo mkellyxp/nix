@@ -105,7 +105,7 @@
       };
       locations."/".extraConfig = ''
                         rewrite ^/(.*)/$ /$1 permanent;
-        			    try_files $uri $uri/ /$uri.php;
+        			    try_files $uri $uri/ /$uri.php?$query_string;
         		    '';
       locations."~ \.php$".extraConfig = ''
         			    fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
