@@ -15,16 +15,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    # gnomeExtensions.hide-universal-access
-    # gnomeExtensions.steal-my-focus-window
-    # gnomeExtensions.appindicator
-    # gnome-themes-extra
-    # gnome-tweaks
-    # gnome-boxes
-    # gnome-terminal
-    # gthumb
-    # papirus-icon-theme
-    # wmctrl
+    gthumb
     # wl-clipboard
   ];
 }
