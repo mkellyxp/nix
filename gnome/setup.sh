@@ -40,6 +40,10 @@ dconf write /org/gtk/settings/file-chooser/clock-format "'12h'"
 dconf write /org/gnome/desktop/interface/enable-animations false
 dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com']"
 
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>Return'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'gnome-terminal --maximize'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Terminal'"
+
 gsettings set org.gnome.desktop.privacy remember-recent-files false
 
 # Flatpaks
