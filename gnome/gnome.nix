@@ -32,7 +32,7 @@
       gitkraken = prev.gitkraken.overrideAttrs (oldAttrs: rec {
         desktopItems = [
           (prev.makeDesktopItem {
-            name = "GitKraken";
+            name = "gitkraken";
             exec = "gitkraken --enable-features=UseOzonePlatform --ozone-platform=wayland";
             icon = "gitkraken";
             desktopName = "GitKraken Desktop";
