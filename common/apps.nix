@@ -23,7 +23,7 @@
     appimage-run
     vlc
     stripe-cli
-    protonvpn-gui
+    proton-vpn
     obs-studio
     beekeeper-studio
   ];
