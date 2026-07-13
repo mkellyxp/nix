@@ -31,7 +31,8 @@
   nixpkgs.config.allowInsecurePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
-      "beekeeper-studio" # matches any version
+      "beekeeper-studio"
+      "pnpm"
     ];
 
 }
