@@ -32,8 +32,8 @@ sudo mkdir /var/www
 sudo chown -R nginx:nginx /var/www
 sudo chmod -R 775 /var/www
 
-sudo mariadb -uroot -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'n3wj3rs3y'"
-sudo mariadb -uroot -pn3wj3rs3y -e "flush privileges"
+sudo mysql -uroot -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'n3wj3rs3y'"
+sudo mysql -uroot -pn3wj3rs3y -e "flush privileges"
 
 echo 'Set your local user in config to:'
 echo 'extraGroups = [ "networkmanager" "wheel" "video" "nginx" ];';
