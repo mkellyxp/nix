@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    php82
+    php83
     nodejs
     intelephense
     typescript-language-server
@@ -176,7 +176,7 @@
   services.phpfpm = {
     pools.mypool = {
       phpPackage = (
-        pkgs.php82.withExtensions (
+        pkgs.php83.withExtensions (
           { enabled, all }:
           enabled
           ++ [
