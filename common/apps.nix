@@ -18,7 +18,6 @@
     gitkraken
     htop
     fastfetch
-    vscode
     git
     appimage-run
     vlc
