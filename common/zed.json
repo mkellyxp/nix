@@ -1,0 +1,66 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "format_on_save": "on",
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+    },
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "agent": {
+    "dock": "right",
+  },
+  "languages": {
+    "PHP": {
+      "language_servers": [
+        "intelephense",
+        "tailwindcss-language-server",
+        "vscode-html-language-server",
+        "!phpactor",
+        "!phptools",
+        "!phpantom",
+      ],
+      "format_on_save": "on",
+      "formatter": {
+        "language_server": { "name": "intelephense" },
+      },
+    },
+    "HTML": {
+      "language_servers": [
+        "tailwindcss-language-server",
+        "vscode-html-language-server",
+      ],
+      "format_on_save": "off",
+      "formatter": {
+        "language_server": { "name": "vscode-html-language-server" },
+      },
+    },
+  },
+  "lsp": {
+    "intelephense": {
+      "settings": {
+        "intelephense": {
+          "diagnostics": {
+            "undefinedProperties": false,
+          },
+        },
+      },
+    },
+  },
+}
